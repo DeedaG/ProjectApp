@@ -1,0 +1,24 @@
+﻿@model ProjectViewModel
+@{
+    ViewData["Title"] = "Project";
+}
+
+<h1 class="text">Projects</h1>
+
+
+@if (Model != null)
+{
+    <h2 class="text">The following is a list of projects.</h2>
+    <h2 class="text">Model.Name</h2>
+    <h2 class="text">Model.Language</h2>
+    <h2 class="text">Model.Info</h2>
+    <h2 class="text">Model.StartDate</h2>
+    <h2 class="text">Model.EndDate </h2>
+}
+else
+{
+<h3 class="text">No projects are available.</h3>
+}
+
+
+
