@@ -1,5 +1,6 @@
-@page
-@model ProjectApp.CreateModel
+@model ProjectApp.Models.ProjectViewModel
+
+@{ ViewData["Title"] = "Create"; }
 
 <h1>Create</h1>
 
@@ -7,39 +8,48 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <div>
-                    <label for="CompanyName">Name:</label>
+                    <label for="ProjectName">Name:</label>
                     <input type="text" id="Name" name="Name" value="" />
                 </div>
                 <div>
-                    <label for="CompanyName">Language:</label>
+                    <label for="ProjectName">Language:</label>
                     <input type="text" id="Language" name="Language" value="" />
                 </div>
                 <div>
-                    <label for="CompanyName">Details:</label>
+                    <label for="ProjectName">Details:</label>
                     <input type="text" id="Info" name="Info" value="" />
                 </div>
                 <div>
-                    <label for="CompanyName">Start Date:</label>
+                    <label for="ProjectName">Start Date:</label>
                     <input type="text" id="StartDate" name="StartDate" value="" />
                 </div>
                 <div>
-                    <label for="CompanyName">End Date:</label>
+                    <label for="ProjectName">End Date:</label>
                     <input type="text" id="EndDate" name="EndDate" value="" />
                 </div>
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                </div>
-</form>
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="/Index">Back to List</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+
+
+
+
+
+        
+                
+               
