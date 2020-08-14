@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace ProjectApp.Models
 
 {
@@ -6,10 +8,12 @@ namespace ProjectApp.Models
     {
         [System.ComponentModel.DataAnnotations.Key]
         public int Id { get; set; }
-        string Name { get; set; }
-        string Language { get; set; }
-        string Info { get; set; }
-        DateTime? StartDate { get; set; }
-        DateTime? EndDate { get; set; }
+        [Required(ErrorMessage = "This field is required.")]
+        public string Name { get; set; }
+        public string Language { get; set; }
+        public string Info { get; set; }
+        [Required(ErrorMessage = "This field is required.")]
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
     }
 }
