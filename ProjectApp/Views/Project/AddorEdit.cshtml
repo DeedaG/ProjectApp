@@ -1,0 +1,54 @@
+@model ProjectApp.Models.ProjectViewModel
+
+@{ ViewData["Title"] = "Create"; }
+
+<h1>Project Form</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddorEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <div>
+                    <label for="ProjectName">Name:</label>
+                    <input type="text" id="Name" name="Name" value="" />
+                </div>
+                <div>
+                    <label for="Language">Language:</label>
+                    <input type="text" id="Language" name="Language" value="" />
+                </div>
+                <div>
+                    <label for="Info">Details:</label>
+                    <input type="text" id="Info" name="Info" value="" />
+                </div>
+                <div>
+                    <label for="StartDate">Start Date:</label>
+                    <input type="text" id="StartDate" name="StartDate" value="" />
+                </div>
+                <div>
+                    <label for="EndDate">End Date:</label>
+                    <input type="text" id="EndDate" name="EndDate" value="" />
+                </div>
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+
+
+
+        
+                
+               

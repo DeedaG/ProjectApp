@@ -1,0 +1,36 @@
+@model IEnumerable<ProjectApp.Models.ProjectViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Projects</h1>
+< hr />
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>model.Name</th>
+            <th>model.Language</th>
+            <th>model.Info</th>
+            <th>model.StartDate</th>
+            <th>model.EndDate</th>
+            <td>
+                <a asp-action="AddorEdit">Create New</a>
+            </td>
+        </tr>
+    </thead>    
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <th>@item.Name</th>
+            <th>@item.Language</th>
+            <th>@item.Info</th>
+            <th>@item.StartDate</th>
+            <th>@item.EndDate</th>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
