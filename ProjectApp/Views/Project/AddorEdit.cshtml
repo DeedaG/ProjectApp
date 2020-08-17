@@ -9,6 +9,7 @@
     <div class="col-md-4">
         <form asp-action="AddorEdit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id"/>
             <div class="form-group">
                 <div>
                     <label for="ProjectName">Name:</label>
@@ -37,7 +38,9 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">
+        <i class="arrow alternate circle left icon">Back to List</i>
+    </a>
 </div>
 
 @section Scripts {

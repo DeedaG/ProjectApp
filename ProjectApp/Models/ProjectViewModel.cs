@@ -8,12 +8,12 @@ namespace ProjectApp.Models
     {
         [System.ComponentModel.DataAnnotations.Key]
         public int Id { get; set; }
-        [Required(ErrorMessage = "This field is required.")]
+        [Required (ErrorMessage = "This is a required field")]
         public string Name { get; set; }
         public string Language { get; set; }
-        public string Info { get; set; }
-        [Required(ErrorMessage = "This field is required.")]
+        public string Info { get; set; }        
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
     }
 }
+

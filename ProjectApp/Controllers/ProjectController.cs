@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,27 +22,33 @@ namespace ProjectApp.Controllers
 
         //GET: ProjectViewModel
         public async Task<IActionResult> Index()
+            
         {
             return View(await _context.ProjectViewModel.ToListAsync());
         }
 
-
         //Get: Project/Create
         public IActionResult AddorEdit(int id=0)
         {
-            return View(new ProjectViewModel());
+            if (id == 0)
+                return View(new ProjectViewModel());
+            else
+                return View(_context.ProjectViewModel.Find(id));
         }
 
         //Post: Project/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddorEdit(int id, [Bind("Id,Name,Language,Info,StartDate,EndDate")] ProjectViewModel project)
+        public async Task<IActionResult> AddorEdit(int Id, [Bind("Id,Name,Language,Info,StartDate,EndDate")] ProjectViewModel project)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(project);
+                if (project.Id == 0)
+                    _context.Add(project);
+                else
+                    _context.Update(project);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
             return View(project);
         }
@@ -49,17 +56,11 @@ namespace ProjectApp.Controllers
         // Get: Project/Delete/id
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            var project = await _context.ProjectViewModel.FindAsync(id);
+            _context.ProjectViewModel.Remove(project);
+            await _context.SaveChangesAsync();
 
-            var project = await _context.ProjectViewModel.FirstOrDefaultAsync(m => m.Id == id);
-            if (project == null)
-            {
-                return NotFound();
-            }
-            return View(project);
+            return RedirectToAction(nameof(Index));
         }
 
     }
