@@ -5,11 +5,11 @@
 <h1>Project Form</h1>
 
 <hr />
-<div class="row">
+<div class="row text-center">
     <div class="col-md-6">
         <form asp-action="AddorEdit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id"/>
+            <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <div>
                     <label for="ProjectName">Name:</label>
@@ -31,27 +31,28 @@
                     <label for="EndDate">End Date:</label>
                     <input type="text" id="EndDate" name="EndDate" value="" />
                 </div>
-                <input type="submit" value="Update" class="btn btn-primary" />
+                <input type="submit" value="Update" class="btn btn-primary panel panel-success" />
             </div>
         </form>
+        <a asp-action="Index">
+            <i class="arrow alternate circle left icon">Back to List</i>
+        </a>
     </div>
-</div>
+    <img src="~/images/projectpix.jpg" class="w-50 h-50" alt="My image" />
 
-<div>
-    <a asp-action="Index">
-        <i class="arrow alternate circle left icon">Back to List</i>
-    </a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
-
-
-
-
-
-
+    
         
-                
-               
+    
+</div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+
+
+
+
+
+
+

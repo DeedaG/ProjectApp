@@ -1,11 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-    <div class="text-center">
-        <h1 class="display-4">Welcome to the Home page.</h1>
-        <a class="navbar-brand text-dark" asp-area="" asp-controller="Project" asp-action="Index">View Projects</a><br />
-        <a class="navbar-brand text-dark" asp-area="" asp-controller="Project" asp-action="AddorEdit">Add a new project.</a>
+    
+    <div class="text-left">
+        <h1 class="display-4">Application Project Manager</h1>
     </div>
-    
-    
+    <div class="text-center">
+        <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item .col-sm-5">
+                <a class="navbar-brand text-dark" asp-area="" asp-controller="Project" asp-action="Index">Project List</a><br />
+                <a class="navbar-brand text-dark" asp-area="" asp-controller="Project" asp-action="AddorEdit">Add a project</a>
+            </li>
+        </ul>
+        <img src="~/images/laptopcrane.jpg" class="img-responsive" style="max-width: 50%; height:auto;" alt="My image" />
+    </div>      
+
+
