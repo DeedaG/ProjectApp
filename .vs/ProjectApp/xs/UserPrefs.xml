@@ -1,10 +1,11 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{85746ECD-50F5-49AD-A6EE-A34CD632C853}|ProjectApp">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectApp/Views/Shared/_Layout.cshtml">
     <Files>
-      <File FileName="ProjectApp/Views/Shared/_Layout.cshtml" Line="22" Column="44" />
-      <File FileName="ProjectApp/Views/Home/Index.cshtml" Line="18" Column="1" />
+      <File FileName="ProjectApp/Controllers/ProjectController.cs" Line="28" Column="37" />
       <File FileName="ProjectApp/Views/Project/Index.cshtml" Line="7" Column="18" />
-      <File FileName="ProjectApp/Views/Project/AddorEdit.cshtml" Line="39" Column="13" />
+      <File FileName="ProjectApp/Views/Project/AddorEdit.cshtml" Line="34" Column="96" />
+      <File FileName="ProjectApp/Views/Home/Index.cshtml" Line="10" Column="44" />
+      <File FileName="ProjectApp/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,11 +18,11 @@
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
+                <Node name="Home" expanded="True" />
                 <Node name="Project" expanded="True" />
-                <Node name="Shared" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" selected="True" />
+                </Node>
               </Node>
               <Node name="wwwroot" expanded="True">
                 <Node name="Images" expanded="True" />

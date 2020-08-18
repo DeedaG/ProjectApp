@@ -21,11 +21,22 @@ namespace ProjectApp.Controllers
         }
 
         //GET: ProjectViewModel
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
             
         {
+            var projects = from p in _context.ProjectViewModel
+                           select p;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                projects = projects.Where(s => s.Name.Contains(searchString) || s.Language.Contains(searchString));
+            }
+
+            //return View(await projects.ToListAsync());
+
             return View(await _context.ProjectViewModel.ToListAsync());
         }
+
 
         //Get: Project/Create
         public IActionResult AddorEdit(int id=0)
