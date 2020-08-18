@@ -38,6 +38,12 @@ namespace ProjectApp.Controllers
         }
 
 
+        [HttpPost]
+        public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
+        }
+
         //Get: Project/Create
         public IActionResult AddorEdit(int id=0)
         {
