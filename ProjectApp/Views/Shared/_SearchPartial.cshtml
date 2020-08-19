@@ -1,0 +1,16 @@
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+    <li>
+        <form asp-controller="Project" asp-action="Index" method="get" class="form-inline my-2 my-lg-0">
+            <input type="text" name="SearchString">
+            <input type="submit" value="Search" />
+        </form>
+    </li>
+        } 
+</ul>

@@ -6,13 +6,12 @@
         <h1 class="display-4">Application Manager</h1>
     </div>
     <div class="text-center">
-        <ul class="navbar-nav flex-grow-1">
-            <li class="nav-item .col-sm-5">
-                <a class="navbar-brand text-dark" asp-area="" asp-controller="Project" asp-action="Index">Project List</a><br />
-                <a class="navbar-brand text-dark" asp-area="" asp-controller="Project" asp-action="AddorEdit">Add a project</a>
+        <ul style="text-align:left">
+            <li class="nav-item">
+                <partial name="_LoginPartial"/>
             </li>
         </ul>
-        <img src="~/images/laptopcrane.jpg" class="img-responsive" style="max-width: 50%; height:auto;" alt="My image" />
+        <img src="~/images/laptopcrane.jpg" style="max-width: 50%; height:auto;" alt="My image" />
     </div>      
 
 
