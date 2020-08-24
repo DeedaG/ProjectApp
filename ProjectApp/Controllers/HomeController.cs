@@ -42,7 +42,7 @@ namespace ProjectApp.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public async Task<IActionResult> PieChartDataAsync()
+        public async Task<IActionResult> _PieChartDataAsync()
         {
             var projects = await _context.ProjectViewModel.ToListAsync();
 
