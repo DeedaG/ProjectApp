@@ -1,7 +1,8 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-    
+﻿@Model IEnumerable<ProjectViewModel],System.Int32,System.ValueTuple`2[System.String,System.Int32>
+    @{
+        ViewData["Title"] = "Home Page";
+    }
+
     <div class="text-left">
         <h1 class="display-4">Application Manager</h1>
     </div>
@@ -11,8 +12,51 @@
                 <partial name="_LoginPartial" />
             </li>
         </ul>
-    </div>      
-    <div id="piechart" class="nav-item" style="float:right;width:50%">
-        <partial name="_PieChartData.cshtml" />
     </div>
+    @using Microsoft.AspNetCore.Identity
+
+    @inject SignInManager<ApplicationUser> SignInManager
+    @inject UserManager<ApplicationUser> UserManager
+
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <div id="piechart" class="text-center" style="float:right;width:60%">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+            <script type="text/javascript">// Load google charts
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            List[] chartData = @foreach (var item in Model)
+                {
+                    @item
+                }
+
+            var data = google.visualization.arrayToDataTable([
+                ['Languages', 'Frequency'],
+
+                chartData
+
+            ]);
+
+            
+            var options = { 'title': 'My Average Day', 'width': 550, 'height': 400 };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }</script>
+
+        </div>
+
+
+    }
+    else
+    {
+        @*<div id="piechart">*@
+        <img src="~/images/laptopcrane.jpg" style="max-width: 50%; height:auto;" alt="My image" />
+        @*</div>*@
+    }
+
+
 

@@ -20,9 +20,24 @@ namespace ProjectApp.Controllers
             _context = context;
         }
         // GET: /<controller>/
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var projects = await _context.ProjectViewModel.ToListAsync();
+
+            var langTypes = projects.GroupBy(x => x.Language).ToList();
+
+
+
+            var langCount = langTypes.GroupBy(x => x).Select(x => x.Count()).ToList();
+
+            // Add elements at each position together.
+            var chartData = langTypes.Zip(langCount, (a, b) => (a.Key, b));
+
+               
+            //var resultData = langTypes.GroupBy(x => x).ToDictionary(x => x.Key.Key, x => x.Count());
+
+            return View(chartData);
+            
         }
 
         public IActionResult Privacy()
@@ -40,17 +55,6 @@ namespace ProjectApp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
-        public async Task<IActionResult> _PieChartDataAsync()
-        {
-            var projects = await _context.ProjectViewModel.ToListAsync();
-
-            var langTypes = projects.GroupBy(x => x.Language);
-
-            var resultData =  langTypes.GroupBy(x => x).ToDictionary(x => x.Key.Key, x => x.Count()).ToArray();
-
-            return PartialView(resultData);
         }
     }
 

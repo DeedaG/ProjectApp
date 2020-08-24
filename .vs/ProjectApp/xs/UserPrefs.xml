@@ -1,18 +1,5 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{85746ECD-50F5-49AD-A6EE-A34CD632C853}|ProjectApp">
   <MonoDevelop.Ide.Workbench>
-    <Files>
-      <File FileName="ProjectApp/Models/ApplicationUser.cs" Line="14" Column="1" />
-      <File FileName="ProjectApp/Models/ProjectViewModel.cs" Line="16" Column="47" />
-      <File FileName="ProjectApp/Areas/Identity/Data/ProjectAppIdentityDbContext.cs" Line="24" Column="31" />
-      <File FileName="ProjectApp/Views/Shared/_LoginPartial.cshtml" Line="1" Column="1" />
-      <File FileName="ProjectApp/Views/Shared/_SearchPartial.cshtml" Line="17" Column="1" />
-      <File FileName="ProjectApp/Views/Project/AddorEdit.cshtml" Line="1" Column="1" />
-      <File FileName="ProjectApp/Views/Project/Index.cshtml" Line="1" Column="1" />
-      <File FileName="ProjectApp/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
-      <File FileName="ProjectApp/Views/Shared/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
-      <File FileName="ProjectApp/Views/Home/_PieChartData.cshtml" Line="10" Column="11" />
-      <File FileName="ProjectApp/Views/Home/Index.cshtml" Line="13" Column="14" />
-    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -31,12 +18,12 @@
                   <Node name="20200824151128_UserHasManyProjects.cs" expanded="True" />
                 </Node>
               </Node>
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="ProjectViewModel.cs" selected="True" />
+              </Node>
               <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
+                <Node name="Home" expanded="True" />
                 <Node name="Project" expanded="True" />
                 <Node name="Shared" expanded="True" />
               </Node>
@@ -50,7 +37,9 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../ProjectApp/Views/Home/_PieChartData.cshtml" line="0" column="7" endLine="0" endColumn="36" offsetX="-1" offsetY="-1" expression="IEnumerable&lt;ProjectViewModel&gt;" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
