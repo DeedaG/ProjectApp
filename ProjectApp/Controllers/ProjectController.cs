@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProjectApp.Models;
@@ -16,9 +17,12 @@ namespace ProjectApp.Controllers
     {
         private readonly ProjectDBContext _context;
 
-        public ProjectController(ProjectDBContext context)
+        private UserManager<ApplicationUser> _userManager;
+
+        public ProjectController(ProjectDBContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         //GET: ProjectViewModel
@@ -64,7 +68,11 @@ namespace ProjectApp.Controllers
             if (ModelState.IsValid)
             {
                 if (project.Id == 0)
+                {
+                    var userId = _userManager.GetUserId(this.HttpContext.User);
+                    project.UserId = userId;
                     _context.Add(project);
+                }
                 else
                     _context.Update(project);
                 await _context.SaveChangesAsync();
