@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProjectApp.Areas.Identity.Data;
+using ProjectApp.Models;
 
 [assembly: HostingStartup(typeof(ProjectApp.Areas.Identity.IdentityHostingStartup))]
 namespace ProjectApp.Areas.Identity
@@ -19,7 +20,7 @@ namespace ProjectApp.Areas.Identity
                     options.UseSqlite(
                         context.Configuration.GetConnectionString("ProjectAppIdentityDbContextConnection")));
 
-                services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddEntityFrameworkStores<ProjectAppIdentityDbContext>();
             });
         }

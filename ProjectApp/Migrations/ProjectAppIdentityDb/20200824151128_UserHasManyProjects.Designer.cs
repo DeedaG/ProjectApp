@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjectApp.Areas.Identity.Data;
 
 namespace ProjectApp.Migrations.ProjectAppIdentityDb
 {
     [DbContext(typeof(ProjectAppIdentityDbContext))]
-    partial class ProjectAppIdentityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200824151128_UserHasManyProjects")]
+    partial class UserHasManyProjects
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

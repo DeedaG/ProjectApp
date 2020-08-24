@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProjectApp.Models;
@@ -45,6 +46,7 @@ namespace ProjectApp.Controllers
         }
 
         //Get: Project/Create
+        [Authorize]
         public IActionResult AddorEdit(int id=0)
         {
             if (id == 0)
@@ -55,6 +57,7 @@ namespace ProjectApp.Controllers
 
         //Post: Project/Create
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddorEdit(int Id, [Bind("Id,Name,Language,Info,StartDate,EndDate")] ProjectViewModel project)
         {
