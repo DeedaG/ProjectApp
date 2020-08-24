@@ -11,6 +11,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Shared\Project.cshtml" />
+    <Content Remove="Views\Home\PieChartData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.7" />

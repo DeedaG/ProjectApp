@@ -1,22 +1,19 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{85746ECD-50F5-49AD-A6EE-A34CD632C853}|ProjectApp">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectApp/appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectApp/Controllers/HomeController.cs">
     <Files>
       <File FileName="ProjectApp/Models/ApplicationUser.cs" Line="14" Column="1" />
       <File FileName="ProjectApp/Models/ProjectViewModel.cs" Line="16" Column="47" />
       <File FileName="ProjectApp/Areas/Identity/Data/ProjectAppIdentityDbContext.cs" Line="24" Column="31" />
-      <File FileName="ProjectApp/Startup.cs" Line="1" Column="1" />
-      <File FileName="ProjectApp/Areas/Identity/IdentityHostingStartup.cs" Line="16" Column="55" />
-      <File FileName="ProjectApp/Migrations/ProjectAppIdentityDb/20200824151128_UserHasManyProjects.Designer.cs" Line="262" Column="1" />
       <File FileName="ProjectApp/Controllers/ProjectController.cs" Line="77" Column="46" />
-      <File FileName="ProjectApp/Views/Shared/_LoginPartial.cshtml" Line="6" Column="24" />
-      <File FileName="ProjectApp/Views/Shared/_SearchPartial.cshtml" Line="16" Column="6" />
-      <File FileName="ProjectApp/Views/Home/Index.cshtml" Line="1" Column="1" />
+      <File FileName="ProjectApp/Views/Shared/_LoginPartial.cshtml" Line="1" Column="1" />
+      <File FileName="ProjectApp/Views/Shared/_SearchPartial.cshtml" Line="17" Column="1" />
+      <File FileName="ProjectApp/Views/Home/Index.cshtml" Line="19" Column="1" />
       <File FileName="ProjectApp/Views/Project/AddorEdit.cshtml" Line="1" Column="1" />
       <File FileName="ProjectApp/Views/Project/Index.cshtml" Line="1" Column="1" />
       <File FileName="ProjectApp/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
       <File FileName="ProjectApp/Views/Shared/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
-      <File FileName="ProjectApp/Views/Shared/Error.cshtml" Line="1" Column="1" />
-      <File FileName="ProjectApp/appsettings.json" Line="11" Column="38" />
+      <File FileName="ProjectApp/Views/Home/PieChartData.cs" Line="49" Column="10" />
+      <File FileName="ProjectApp/Controllers/HomeController.cs" Line="15" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -30,7 +27,9 @@
                   <Node name="Pages" expanded="True" />
                 </Node>
               </Node>
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
               <Node name="Migrations" expanded="True">
                 <Node name="ProjectAppIdentityDb" expanded="True">
                   <Node name="20200824151128_UserHasManyProjects.cs" expanded="True" />
@@ -46,7 +45,7 @@
               <Node name="wwwroot" expanded="True">
                 <Node name="js" expanded="True" />
               </Node>
-              <Node name="appsettings.json" expanded="True" selected="True" />
+              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>
