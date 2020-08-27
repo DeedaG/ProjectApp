@@ -1,7 +1,6 @@
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/bin/Debug/netcoreapp3.1/appsettings.Development.json
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/bin/Debug/netcoreapp3.1/appsettings.json
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
-/Users/christiatidwell/Projects/ProjectApp/ProjectApp/bin/Debug/netcoreapp3.1/ProjectDBContext-1c3111e5-f7ed-4b80-a8d7-a675533be1c9.db
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/bin/Debug/netcoreapp3.1/ProjectApp.StaticWebAssets.xml
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/bin/Debug/netcoreapp3.1/ProjectApp.deps.json
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/bin/Debug/netcoreapp3.1/ProjectApp.runtimeconfig.json

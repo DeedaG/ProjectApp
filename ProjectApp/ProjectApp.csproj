@@ -40,11 +40,6 @@
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="ProjectDBContext-1c3111e5-f7ed-4b80-a8d7-a675533be1c9.db" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ProjectDBContext-1c3111e5-f7ed-4b80-a8d7-a675533be1c9.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <None Include="..\.editorconfig" />
   </ItemGroup>
 </Project>

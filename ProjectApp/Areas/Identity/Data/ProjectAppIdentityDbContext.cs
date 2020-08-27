@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +17,12 @@ namespace ProjectApp.Areas.Identity.Data
         {
             builder.Entity<ApplicationUser>()
                 .HasMany(p => p.Projects)
-                .WithOne(u => u.User)
+                .WithOne(u => u.ProjectUser)
+                .IsRequired();
+
+            builder.Entity<ApplicationUser>()
+                .HasMany(c => c.Charts)
+                .WithOne(u => u.ChartUser )
                 .IsRequired();
 
             base.OnModelCreating(builder);

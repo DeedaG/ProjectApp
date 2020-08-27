@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -23,20 +21,16 @@ namespace ProjectApp.Controllers
         public async Task<IActionResult> Index()
         {
             var projects = await _context.ProjectViewModel.ToListAsync();
-
+            
             var langTypes = projects.GroupBy(x => x.Language).ToList();
-
-
 
             var langCount = langTypes.GroupBy(x => x).Select(x => x.Count()).ToList();
 
-            // Add elements at each position together.
-            var chartData = langTypes.Zip(langCount, (a, b) => (a.Key, b));
+            //var chartData = langTypes.Zip(langCount, (a, b) => (a.Key, b));
 
-               
-            //var resultData = langTypes.GroupBy(x => x).ToDictionary(x => x.Key.Key, x => x.Count());
+            var resultData = langTypes.GroupBy(x => x).ToDictionary(x => x.Key.Key, x => x.Count());
 
-            return View(chartData);
+            return View(resultData);
             
         }
 

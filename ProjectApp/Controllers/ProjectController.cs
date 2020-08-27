@@ -63,19 +63,52 @@ namespace ProjectApp.Controllers
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddorEdit(int Id, [Bind("Id,Name,Language,Info,StartDate,EndDate")] ProjectViewModel project)
+        public async Task<IActionResult> AddorEdit(int Id,
+            [Bind("Id,Name,Language,Info,StartDate,EndDate,ProjectDataId")]
+            ProjectViewModel project)
         {
             if (ModelState.IsValid)
             {
                 if (project.Id == 0)
                 {
                     var userId = _userManager.GetUserId(this.HttpContext.User);
-                    project.UserId = userId;
-                    _context.Add(project);
+                    project.ProjectUserId = userId;
+
+                    var allChartData = _context.ChartData;
+                       
+                    foreach (var c in allChartData)
+                    {
+                        if (userId == c.ChartUserId)
+                        {
+                            project.ProjectDataId = c.Id;
+                            //c.DataForProjects.Add(project);
+
+                            _context.Update(project);
+                            await _context.SaveChangesAsync();
+                        }
+                        else
+                        {
+                            var newChartData = new ChartData
+                            {
+                                ChartUserId = userId
+                            };
+                            
+                            //newChartData.DataForProjects.Add(project);
+                            _context.Add(project);
+                            //_context.Update(chartData)
+                            _context.Add(newChartData);
+                            await _context.SaveChangesAsync();
+                            project.ProjectDataId = newChartData.Id;
+                        }
+                        return RedirectToAction(nameof(Index));
+                    }
                 }
                 else
+                {
                     _context.Update(project);
-                await _context.SaveChangesAsync();
+                    //_context.Update(chart);
+                    await _context.SaveChangesAsync();
+                }
                 return RedirectToAction(nameof(Index));
             }
             return View(project);
