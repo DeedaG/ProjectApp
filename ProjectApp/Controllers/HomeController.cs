@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +22,7 @@ namespace ProjectApp.Controllers
         public async Task<IActionResult> Index()
         {
             var projects = await _context.ProjectViewModel.ToListAsync();
-            
+
             var langTypes = projects.GroupBy(x => x.Language).ToList();
 
             var langCount = langTypes.GroupBy(x => x).Select(x => x.Count()).ToList();
@@ -31,7 +32,7 @@ namespace ProjectApp.Controllers
             var resultData = langTypes.GroupBy(x => x).ToDictionary(x => x.Key.Key, x => x.Count());
 
             return View(resultData);
-            
+
         }
 
         public IActionResult Privacy()
@@ -44,12 +45,20 @@ namespace ProjectApp.Controllers
             return View();
         }
 
-        
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-    }
+            return View(new ErrorViewModel
+            {
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
+                //Message = "TEST",
+                //ProjectDate = DateTime.Now,
+                //Title = "Error"
+            });
 
+
+        }
+
+    }
 }

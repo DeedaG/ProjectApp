@@ -111,7 +111,10 @@ namespace ProjectApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(project);
+
+            ViewBag.errorMessage = "MM/DD/YYYY Format required";
+
+            return RedirectToAction(nameof(Index));
         }
 
         // Get: Project/Delete/id
