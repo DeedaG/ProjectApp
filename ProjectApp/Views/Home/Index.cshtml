@@ -1,4 +1,4 @@
-﻿@model Dictionary<System.String,System.Int32>
+﻿@model Dictionary<System.String, System.Int32>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -21,36 +21,33 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <div id="piechart" class="text-center" style="float:right;width:60%">
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">google.charts.load('current', { 'packages': ['corechart'] });
-                                      google.charts.setOnLoadCallback(drawChart);
+    @*<div id="piechart" class="text-center" style="float:right;width:60%">*@
+    <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
 
-            function drawChart() {
+        function drawChart() {
 
-                var chartInfo = @foreach (var item in @Model)
-                      {
-                                                  @item
-                                              }
+            var data = google.visualization.arrayToDataTable([
+                ['My Project Languages', 'Frequency'],
+                ['Ruby', 3],
+                ['C#', 2],
+                ['React', 2]
+            ]);
 
-                                          var data = google.visualization.arrayToDataTable([
-                                              ['Language', 'Frequency'],
-                                              [chartInfo, 1],
+            var options = {
+                title: 'My Daily Activities'
+            };
 
-                                              ['Ruby', 2],
-                                              ['C#', 7]
-                                          ]);
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-                                          var options = {
-                                              title: 'Project Languages'
-                                          };
-
-                                          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-                                          chart.draw(data, options);
-                                      }</script>
-
-    </div>
+            chart.draw(data, options);
+        }</script>
+    </head>
+    <body>
+        <div id="piechart" class="text-center" style="float:right;width:60%"></div>
+    </body>
 }
 else
 {
