@@ -1,3 +1,65 @@
-﻿@model IEnumerable<ProjectViewModel>
+﻿@model Dictionary<System.String, System.Int32>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+            ['Project Language', 'Frequency'],
+            ['Ruby', 3],
+            ['C#', 2],
+            ['React', 2]
+        ]);
+
+        var data2 = google.visualization.arrayToDataTable([
+            ['Language', 'Days Coding'],
+            ['Ruby', 10],
+            ['C#', 20],
+            ['React', 7]
+        ]);
+
+        var data3 = google.visualization.arrayToDataTable([
+            ['Name', 'Start Date'],
+            ['Test1', 8/2/2020],
+            ['Test2', 7/1/2020],
+            ['test3', 8/31/2020]
+        ]);
+
+        var options = {
+            backgroundColor: 'transparent',
+            title: 'Languages',
+            titleTextStyle: {
+                style: "float:right;width:60%"
+            }
+        };
+
+        var options2 = {
+                backgroundColor: 'transparent',
+                title: 'Development Time',
+                titleTextStyle: {
+                    style: "float:right;width:60%"
+                }
+        };
+
+        var options3 = {
+            backgroundColor: 'transparent',
+            title: 'Unfinished Projects',
+            titleTextStyle: {
+                style: "float:left;width:30%"
+            }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+
+        var chart2 = new google.visualization.PieChart(document.getElementById('piechart2'));
+        chart2.draw(data2, options2);
+
+        var chart3 = new google.visualization.PieChart(document.getElementById('piechart3'));
+
+        chart3.draw(data3, options3);
+    }</script>
 
 

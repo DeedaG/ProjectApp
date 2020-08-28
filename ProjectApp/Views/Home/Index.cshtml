@@ -21,42 +21,21 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    @*<div id="piechart" class="text-center" style="float:right;width:60%">*@
     <head>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">google.charts.load('current', { 'packages': ['corechart'] });
-            google.charts.setOnLoadCallback(drawChart);
-
-            function drawChart() {
-
-                var data = google.visualization.arrayToDataTable([
-                    ['Project Languages', 'Frequency'],
-                    ['Ruby', 3],
-                    ['C#', 2],
-                    ['React', 2]
-                ]);
-
-                var options = {
-                    backgroundColor: 'transparent',
-                    title: 'Languages',
-                    titleTextStyle: {
-                        style: "float:right;width:60%"
-                    }
-                };
-
-                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-                chart.draw(data, options);
-            }</script>
+        <partial name="_PieChartData" />
     </head>
     <body>
-        <div id="piechart" class="text-center" style="float:right;width:50%">
+        <div class="text-center" style="float:right;width:50%">
+            <div id="piechart"></div>
+            <div id="piechart2"></div>
+        </div>
+        <div class="text-center" style="float:left;width:50%">
+            <div style="margin-left: 250px;  margin-top: -50px" id="piechart3"></div>
         </div>
     </body>
 }
 else
 {
-    @*<div id="piechart">*@
     <img src="~/images/laptopcrane.jpg" style="max-width: 50%; height:auto;" alt="My image" />
-    @*</div>*@
+    
 }
