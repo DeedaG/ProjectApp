@@ -8,11 +8,11 @@
     <h1 class="display-4">Application Manager</h1>
 </div>
 <div class="text-center" style="float:left;width:30%">
-    <ul style="text-align:left">
-        <li class="nav-item">
+    <div style="text-align:left">
+        <div class="nav-item">
             <partial name="_LoginPartial" />
-        </li>
-    </ul>
+        </div>
+    </div>
 </div>
 @using Microsoft.AspNetCore.Identity
 
@@ -38,7 +38,10 @@
 
                 var options = {
                     backgroundColor: 'transparent',
-                    title: 'My Project Languages'
+                    title: 'Languages',
+                    titleTextStyle: {
+                        style: "float:right;width:60%"
+                    }
                 };
 
                 var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -47,7 +50,7 @@
             }</script>
     </head>
     <body>
-        <div id="piechart" class="text-center" style="float:right;width:60%">
+        <div id="piechart" class="text-center" style="float:right;width:50%">
         </div>
     </body>
 }
