@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "BMar+Zk6GgAqtRa3tI+4ukE56lh7V9JinJ+AxDe6GuuQ8NpbaltINMsI2RpUkmUhgVUAnit1USNAROgGTdUmAA==",
+  "dgSpecHash": "UMUz6BU3NHW8eQr4884muarIy07fpyXmq42OU7Yc26dEtUQf0BNqW9qheO8zVHgGSp7oYKs44uhSSANlFkWI0Q==",
   "success": true,
   "projectFilePath": "/Users/christiatidwell/Projects/ProjectApp/ProjectApp/ProjectApp.csproj",
   "expectedPackageFiles": [
     "/Users/christiatidwell/.nuget/packages/dapper/2.0.35/dapper.2.0.35.nupkg.sha512",
     "/Users/christiatidwell/.nuget/packages/fontawesome/4.7.0/fontawesome.4.7.0.nupkg.sha512",
+    "/Users/christiatidwell/.nuget/packages/microsoft.aspnetcore.authentication.facebook/3.1.7/microsoft.aspnetcore.authentication.facebook.3.1.7.nupkg.sha512",
     "/Users/christiatidwell/.nuget/packages/microsoft.aspnetcore.cryptography.internal/3.1.7/microsoft.aspnetcore.cryptography.internal.3.1.7.nupkg.sha512",
     "/Users/christiatidwell/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/3.1.7/microsoft.aspnetcore.cryptography.keyderivation.3.1.7.nupkg.sha512",
     "/Users/christiatidwell/.nuget/packages/microsoft.aspnetcore.html.abstractions/2.2.0/microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

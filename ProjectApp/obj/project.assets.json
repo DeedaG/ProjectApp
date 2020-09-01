@@ -17,6 +17,18 @@
       "FontAwesome/4.7.0": {
         "type": "package"
       },
+      "Microsoft.AspNetCore.Authentication.Facebook/3.1.7": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.7": {
         "type": "package",
         "compile": {
@@ -2914,6 +2926,21 @@
         "fontawesome.4.7.0.nupkg.sha512",
         "fontawesome.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Facebook/3.1.7": {
+      "sha512": "R3j72nKQG16hO/SnVrcHR4SJsQwRDHXgtUWu6Vc/UwhXRxBYt3w13RYdwXdLvGPsW0aOgpWeon6Ao4nwo6p8Zw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.facebook/3.1.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.xml",
+        "microsoft.aspnetcore.authentication.facebook.3.1.7.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.facebook.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.7": {
@@ -9225,6 +9252,7 @@
     ".NETCoreApp,Version=v3.1": [
       "Dapper >= 2.0.35",
       "FontAwesome >= 4.7.0",
+      "Microsoft.AspNetCore.Authentication.Facebook >= 3.1.7",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.7",
       "Microsoft.AspNetCore.Identity.UI >= 3.1.7",
       "Microsoft.EntityFrameworkCore >= 3.1.7",
@@ -9249,7 +9277,7 @@
       "outputPath": "/Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/christiatidwell/.nuget/NuGet/NuGet.Config"
+        "/Users/christiatidwell/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -9278,6 +9306,10 @@
           "FontAwesome": {
             "target": "Package",
             "version": "[4.7.0, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Facebook": {
+            "target": "Package",
+            "version": "[3.1.7, )"
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",

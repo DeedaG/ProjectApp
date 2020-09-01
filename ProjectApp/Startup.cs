@@ -25,6 +25,13 @@ namespace ProjectApp
 
             services.AddDbContext<ProjectDBContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("ProjectDBContext")));
+
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+                facebookOptions.AccessDeniedPath = "/AccessDeniedPathInfo";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

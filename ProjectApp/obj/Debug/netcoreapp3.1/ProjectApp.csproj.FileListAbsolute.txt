@@ -10,6 +10,7 @@
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/bin/Debug/netcoreapp3.1/ProjectApp.Views.dll
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/bin/Debug/netcoreapp3.1/ProjectApp.Views.pdb
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/bin/Debug/netcoreapp3.1/Dapper.dll
+/Users/christiatidwell/Projects/ProjectApp/ProjectApp/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.dll
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.Internal.dll
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
