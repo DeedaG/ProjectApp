@@ -1,0 +1,24 @@
+﻿@*@model IEnumerable<ProjectApp.Models.ProjectViewModel>*@
+
+@*@using MultipleModelInOneView;*@
+
+@model dynamic
+
+@{ ViewData["Title"] = "DataForCharts"; }
+
+    var data2 = google.visualization.arrayToDataTable([
+    ["Name", "Days"],
+@foreach (var item in Model.Projects)
+    {
+        @item.Name;
+   }
+    ]);
+
+
+    var data3 = google.visualization.arrayToDataTable([
+    ["Name", "StartDate"]
+@foreach (var item in Model)
+{
+    Console.WriteLine("['" + @item.Name + "', " + @item.StartDate + "]");
+}
+    ]);

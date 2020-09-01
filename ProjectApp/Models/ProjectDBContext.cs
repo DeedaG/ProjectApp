@@ -14,5 +14,6 @@ public class ProjectDBContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Seed();
+        //modelBuilder.Ignore<ChartData>();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
+using ProjectApp.Models;
 
 namespace ProjectApp.Models
 {
@@ -12,7 +13,7 @@ namespace ProjectApp.Models
                 {
                     Id = 1,
                     Name = "Test1",
-                    Language = "Test1",
+                    Language = "Ruby",
                     Info = "test1",
                     StartDate = null,
                     EndDate = null,
@@ -24,13 +25,13 @@ namespace ProjectApp.Models
             {
                 Id = 2,
                 Name = "Test2",
-                Language = "Test2",
+                Language = "React",
                 Info = "test2",
                 StartDate = null,
                 EndDate = null,
                 //ProjectUserId = "1",
                 ProjectDataId = 1
-            });
+            });  
 
             modelBuilder.Entity<ChartData>().HasData(
                 new ChartData

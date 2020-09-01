@@ -7,13 +7,18 @@
 @{ if (ViewBag.errorMessage != "")
     {
 <div style="color:red">**Please try again. Project Date format must be MM/DD/YYYY**</div>
-<br />
-<a asp-action="AddorEdit">
-    <i class="text-dark">Add New Project</i>
-</a>
-    }
-}
+                <br />
+                                <a asp-action="AddorEdit">
+                                    <i class="text-dark">Add New Project</i>
+                                </a> } }
 
+
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
 <table class="table">
     <thead>
         <tr>
@@ -43,7 +48,7 @@
 </tr>
 }
     </tbody>
-</table>
+</table>}
 <div class="text-right">
     <img src="~/images/toolbox.jpg" class=".img-responsive" style="max-width: 40%; height:auto;" alt="My image" />
-</div>                 
+</div>                

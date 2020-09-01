@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ProjectApp.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -49,6 +51,7 @@ namespace ProjectApp.Controllers
             return "From [HttpPost]Index: filter on " + searchString;
         }
 
+
         //Get: Project/Create
         [Authorize]
         public IActionResult AddorEdit(int id=0)
@@ -74,42 +77,69 @@ namespace ProjectApp.Controllers
                     var userId = _userManager.GetUserId(this.HttpContext.User);
                     project.ProjectUserId = userId;
 
-                    var allChartData = _context.ChartData;
-                       
+                    var projects = await _context.ProjectViewModel.Where(x => x.ProjectUserId.Equals(userId)).AsNoTracking().ToListAsync();
+                    var allChartData = await _context.ChartData.Where(x => x.ChartUserId.Equals(userId)).AsNoTracking().ToListAsync();
+                    var langTypes = projects.GroupBy(x => x.Language).ToList();
+
+                    //var frequencyData = langTypes.GroupBy(x => x).ToDictionary(x => x.Key.Key, x => x.Count());
+
                     foreach (var c in allChartData)
                     {
                         if (userId == c.ChartUserId)
                         {
                             project.ProjectDataId = c.Id;
-                            //c.DataForProjects.Add(project);
-
-                            _context.Update(project);
+                            
+                            _context.Add(project);
+                            _context.Update(c);
+                            c.DataForProjects.Add(project);
                             await _context.SaveChangesAsync();
+                            return RedirectToAction(nameof(Index));
                         }
+
+
                         else
                         {
+                            project.ProjectUserId = userId;
+
                             var newChartData = new ChartData
                             {
                                 ChartUserId = userId
                             };
                             
-                            //newChartData.DataForProjects.Add(project);
                             _context.Add(project);
-                            //_context.Update(chartData)
                             _context.Add(newChartData);
-                            await _context.SaveChangesAsync();
                             project.ProjectDataId = newChartData.Id;
+                            newChartData.DataForProjects.Add(project);
+                            await _context.SaveChangesAsync();
+                            return RedirectToAction(nameof(Index));
                         }
+                    }
+                    return RedirectToAction(nameof(Index));
+                }
+
+                else
+                {
+                    var userId = _userManager.GetUserId(this.HttpContext.User);
+                    var currentProjects = await _context.ProjectViewModel.Where(x => x.ProjectUserId.Equals(userId)).AsNoTracking().ToListAsync();
+                    var allCurrentChartData = await _context.ChartData.Where(x => x.ChartUserId.Equals(userId)).AsNoTracking().ToListAsync();
+                    //var currentLangTypes = currentProjects.GroupBy(x => x.Language).ToList();
+
+                    //var frequencyData = currentLangTypes.GroupBy(x => x).ToDictionary(x => x.Key.Key, x => x.Count());
+
+                    foreach (var c in allCurrentChartData)
+                    {
+                        //c.FrequencyData = frequencyData;
+
+                        _context.Update(project);
+                        _context.Update(c);
+                    //_context.ProjectViewModel.Update(project);
+                    //_context.ChartData.Update(c);
+                        await _context.SaveChangesAsync();
                         return RedirectToAction(nameof(Index));
                     }
                 }
-                else
-                {
-                    _context.Update(project);
-                    //_context.Update(chart);
-                    await _context.SaveChangesAsync();
-                }
-                return RedirectToAction(nameof(Index));
+
+                //return RedirectToAction(nameof(Index));
             }
 
             ViewBag.errorMessage = "MM/DD/YYYY Format required";

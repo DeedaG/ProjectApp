@@ -167,6 +167,7 @@
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/_ViewStart.cshtml.g.cs
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/Debug/netcoreapp3.1/Razor/Views/Home/Privacy.cshtml.g.cs
+/Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/Debug/netcoreapp3.1/Razor/Views/Home/_DataForCharts.cshtml.g.cs
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/Debug/netcoreapp3.1/Razor/Views/Home/_PieChartData.cshtml.g.cs
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/Debug/netcoreapp3.1/Razor/Views/Project/AddorEdit.cshtml.g.cs
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/Debug/netcoreapp3.1/Razor/Views/Project/Index.cshtml.g.cs

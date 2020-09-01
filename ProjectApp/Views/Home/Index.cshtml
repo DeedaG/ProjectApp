@@ -1,4 +1,7 @@
-﻿@model Dictionary<System.String, System.Int32>
+﻿@*@model List<KeyValuePair<System.String, System.Int32>>*@
+@*@model IEnumerable<ProjectApp.Models.ProjectViewModel>*@
+@*@model Dictionary<System.String, System.Int32>*@
+@model dynamic
 
 @{
     ViewData["Title"] = "Home Page";
@@ -13,7 +16,7 @@
               margin-left: 5px;
               color: black;
               background-color: lightgrey"
-              aria-hidden="true">Application Manager</i>
+           aria-hidden="true">  Application Manager  </i>
     </h1>
 </div>
 <div class="text-center" style="float:left;width:30%">
@@ -46,5 +49,5 @@
 else
 {
     <img src="~/images/laptopcrane.jpg" style="max-width: 50%; height:auto;" alt="My image" />
-    
+
 }
