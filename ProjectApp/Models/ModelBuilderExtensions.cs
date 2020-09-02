@@ -1,4 +1,4 @@
-﻿using System;
+﻿//using System;
 using Microsoft.EntityFrameworkCore;
 using ProjectApp.Models;
 
@@ -17,7 +17,7 @@ namespace ProjectApp.Models
                     Info = "test1",
                     StartDate = null,
                     EndDate = null,
-                    //ProjectUserId = "1",
+                    //ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
                     ProjectDataId = 1
                 },
 
@@ -29,7 +29,7 @@ namespace ProjectApp.Models
                 Info = "test2",
                 StartDate = null,
                 EndDate = null,
-                //ProjectUserId = "1",
+                //ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
                 ProjectDataId = 1
             });  
 
@@ -37,7 +37,7 @@ namespace ProjectApp.Models
                 new ChartData
                 {
                     Id = 1,
-                    //ChartUserId = "1"
+                    ChartUserId = "93879f86-de21-4285-8b8f-2f76770859cc"
                 });
         }
     }

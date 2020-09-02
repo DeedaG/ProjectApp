@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjectApp.Models
 
@@ -20,6 +21,8 @@ namespace ProjectApp.Models
         public string ProjectUserId { get; set; }
         public ChartData ProjectData { get; set; }
         public int ProjectDataId { get; set; }
+
+        //[NotMapped]
+        //public bool checkboxAnswer { get; set; }
     }
 }
-

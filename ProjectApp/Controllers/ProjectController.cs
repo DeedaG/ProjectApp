@@ -51,7 +51,6 @@ namespace ProjectApp.Controllers
             return "From [HttpPost]Index: filter on " + searchString;
         }
 
-
         //Get: Project/Create
         [Authorize]
         public IActionResult AddorEdit(int id=0)

@@ -13,28 +13,24 @@
             <div class="form-group">
                 <div>
                     <label for="ProjectName">Name:</label>
-                    <input type="text" id="Name" name="Name" value="" />
+                    <input type="text" id="Name" name="Name" value="@Model.Name" />
                 </div>
                 <div>
                     <label for="Language">Language:</label>
-                    <input type="text" id="Language" name="Language" value="" />
+                    <input type="text" id="Language" name="Language" value="@Model.Language" />
                 </div>
                 <div>
                     <label for="Info">Details:</label>
-                    <input type="text" id="Info" name="Info" value="" />
+                    <input type="text" id="Info" name="Info" value="@Model.Info" />
                 </div>
                 <div>
                     <label for="StartDate">Start Date:</label>
-                    <input class="ProjectDate" type="text" id="StartDate" name="StartDate" value="" />
+                    <input class="ProjectDate" type="text" id="StartDate" name="StartDate" value="@Model.StartDate" />
                 </div>
                 <div>
                     <label for="EndDate">End Date:</label>
-                    <input class="ProjectDate" type="text" id="EndDate" name="EndDate" value="" />
+                    <input class="ProjectDate" type="text" id="EndDate" name="EndDate" value="@Model.EndDate" />
                 </div>
-                @*<div>
-          <label for="ProjectChartData">End Date:</label>
-              <input type="text" id="ProjectChartData" name="ProjectChartData" value="Language" />
-        </div>*@
                 <input type="submit" value="Update" class="btn btn-primary panel panel-success" />
             </div>
         </form>
