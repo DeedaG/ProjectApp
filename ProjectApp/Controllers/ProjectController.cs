@@ -71,6 +71,7 @@ namespace ProjectApp.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 if (project.Id == 0)
                 {
                     var userId = _userManager.GetUserId(this.HttpContext.User);
@@ -87,12 +88,14 @@ namespace ProjectApp.Controllers
                         if (userId == c.ChartUserId)
                         {
                             project.ProjectDataId = c.Id;
-                            
+
                             _context.Add(project);
                             _context.Update(c);
                             c.DataForProjects.Add(project);
                             await _context.SaveChangesAsync();
-                            return RedirectToAction(nameof(Index));
+                            //return RedirectToAction(nameof(Index));
+                            TempData["Message"] = "Project Created!";
+                            return View(project);
                         }
 
 
@@ -104,16 +107,17 @@ namespace ProjectApp.Controllers
                             {
                                 ChartUserId = userId
                             };
-                            
+
                             _context.Add(project);
                             _context.Add(newChartData);
                             project.ProjectDataId = newChartData.Id;
                             newChartData.DataForProjects.Add(project);
                             await _context.SaveChangesAsync();
-                            return RedirectToAction(nameof(Index));
+                            TempData["Message"] = "Project Created!";
+                            //return RedirectToAction(nameof(Index));
+                            return View(project);
                         }
                     }
-                    return RedirectToAction(nameof(Index));
                 }
 
                 else
@@ -131,19 +135,23 @@ namespace ProjectApp.Controllers
 
                         _context.Update(project);
                         _context.Update(c);
-                    //_context.ProjectViewModel.Update(project);
-                    //_context.ChartData.Update(c);
                         await _context.SaveChangesAsync();
-                        return RedirectToAction(nameof(Index));
+                        TempData["Message"] = "Project Updated!";
+                        //return RedirectToAction(nameof(Index));
+                        return View(project);
                     }
                 }
 
-                //return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index));
             }
 
-            ViewBag.errorMessage = "MM/DD/YYYY Format required";
+            else
+            {
+                TempData["Message"] = "Please try again.";
+                return RedirectToAction(nameof(AddorEdit));
+            }
 
-            return RedirectToAction(nameof(Index));
+            //return RedirectToAction(nameof(Index));
         }
 
         // Get: Project/Delete/id

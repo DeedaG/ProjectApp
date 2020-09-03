@@ -12,9 +12,11 @@ namespace ProjectApp.Models
         public int Id { get; set; }
         [Required(ErrorMessage = "This is a required field")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "This is a required field")]
         public string Language { get; set; }
         public string Info { get; set; }
         //[DisplayFormat(DataFormatString = "{dd.MM.yyyy}")]
+        [Required(ErrorMessage = "This is a required field")]
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public ApplicationUser ProjectUser { get; set; }

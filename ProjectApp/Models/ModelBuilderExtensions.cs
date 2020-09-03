@@ -1,4 +1,5 @@
 ﻿//using System;
+using System;
 using Microsoft.EntityFrameworkCore;
 using ProjectApp.Models;
 
@@ -15,7 +16,7 @@ namespace ProjectApp.Models
                     Name = "Test1",
                     Language = "Ruby",
                     Info = "test1",
-                    StartDate = null,
+                    StartDate = DateTime.Now,
                     EndDate = null,
                     //ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
                     ProjectDataId = 1
@@ -27,7 +28,7 @@ namespace ProjectApp.Models
                 Name = "Test2",
                 Language = "React",
                 Info = "test2",
-                StartDate = null,
+                StartDate = DateTime.Now,
                 EndDate = null,
                 //ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
                 ProjectDataId = 1
