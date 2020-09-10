@@ -2,6 +2,7 @@
 @*@model IEnumerable<ProjectApp.Models.ProjectViewModel>*@
 @model dynamic
 
+
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 google.charts.load('current', { 'packages': ['corechart'] });
@@ -12,32 +13,54 @@ google.charts.load('current', { 'packages': ['corechart'] });
 
         var data = google.visualization.arrayToDataTable([
             ['Project Language', 'Frequency'],
+            @*["C#", @Model.resultData["C#"]],*@
+            @*["Ruby", @Model.resultData["Ruby"]],*@
+        @*["React", @Model.resultData["React"]],*@
 
-                [ "C#", @Model.resultData["C#"]],
-                ["Ruby", @Model.resultData["Ruby"]],
-                ["React", @Model.resultData["React"]]
-               ]);
+            @*["@Model.projects[@Model.projects.Count - 7].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 7].Language]],*@
+
+            ["@Model.projects[@Model.projects.Count - 6].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 6].Language]],
+
+            ["@Model.projects[@Model.projects.Count - 5].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 5].Language]],
+
+            ["@Model.projects[@Model.projects.Count - 4].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 4].Language]],
+
+            ["@Model.projects[@Model.projects.Count - 3].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 3].Language]],
+
+            ["@Model.projects[@Model.projects.Count - 2].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 2].Language]],
+
+            ["@Model.projects[@Model.projects.Count - 1].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 1].Language]]
+        ]);
+
+        @*data.AddColumn('Project Language', 'Frequency');*@
+        @*data.AddRows([["@Model.projects[@Model.projects.Count - 1].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 1].Language]]]);*@
+
+        @Model.Projects
+       
+
+        
 
 
-                    var data2 = google.visualization.arrayToDataTable([
+        var data2 = google.visualization.arrayToDataTable([
+            ['Language', 'Days Coding'],
+            ["Ruby", 1],
+            ["C#", 2],
+            ["React", 1]
+        ]);
 
-                        ['Language', 'Days Coding'],
-                            ["Ruby", 1],
-                            ["C#", 2],
-                            ["React", 1]
-                    ]);
 
-                        var data3 = google.visualization.arrayToDataTable([
-                            ['Name', 'Start Date'],
+        var data3 = google.visualization.arrayToDataTable([
 
-                            ['NewTest1', 8/2/2020],
+            ['Name', 'Start Date'],
 
-                            ['Test2', 7/1/2020],
+            ['NewTest1', 8 / 2 / 2020],
 
-                            ['test3', 8/31/2020]
-                    ]);
+            ['Test2', 7 / 1 / 2020],
 
-                        var options = {
+            ['test3', 8 / 31 / 2020]
+        ]);
+
+         var options = {
             backgroundColor: 'transparent',
             title: 'Languages',
             titleTextStyle: {
@@ -46,7 +69,7 @@ google.charts.load('current', { 'packages': ['corechart'] });
             slices: [{ color: 'darkorange' }, { color: 'teal' }, { color: 'green' }, { color: 'navy' }, { color: 'purple' }, { color: 'yellow' }, ]
         };
 
-                    var options2 = {
+            var options2 = {
                 backgroundColor: 'transparent',
                 title: 'Development Time',
                 titleTextStyle: {

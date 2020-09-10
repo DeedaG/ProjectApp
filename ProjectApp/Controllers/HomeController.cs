@@ -27,14 +27,15 @@ namespace ProjectApp.Controllers
         public async Task<IActionResult> Index()
         {
             var userId = _userManager.GetUserId(this.HttpContext.User);
-            var projects = await _context.ProjectViewModel.Where(x => x.ProjectUserId
+            var projects = await _context.ProjectViewModel
+                .Where(x => x.ProjectUserId
                 .Equals(userId))
                 .AsNoTracking()
                 .ToListAsync();
 
             var langTypes = projects.GroupBy(x => x.Language).ToList();
 
-            var langCount = langTypes.GroupBy(x => x).Select(x => x.Count()).ToList();
+            //var langCount = langTypes.GroupBy(x => x).Select(x => x.Count()).ToList();
 
             var resultData = langTypes.GroupBy(x => x).ToDictionary(x => x.Key.Key.ToString(), x => x.Count());
 
@@ -68,8 +69,6 @@ namespace ProjectApp.Controllers
                 RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
             });
 
-
         }
-
     }
 }
