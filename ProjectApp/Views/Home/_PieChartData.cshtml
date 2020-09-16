@@ -21,20 +21,17 @@ google.charts.load('current', { 'packages': ['corechart'] });
 
         var data2 = google.visualization.arrayToDataTable([
 
-            ['Language', 'Days Coding'],
-            @*["C#", @Model.resultData2["C#"]],
-            ["Ruby", @Model.resultData2["Ruby"],
-            ["React", @Model.resultData2.["React"]]*@
-
-            ["Ruby", 1],
-            ["C#", 2],
-            ["React", 1]
+            @{foreach (var item in @Model.resultData2)
+                {
+                    @Html.Raw(item);
+                };
+              }
 
         ]);
 
         var data3 = google.visualization.arrayToDataTable([
 
-            @{foreach (var item in @Model.resultData2)
+            @{foreach (var item in @Model.resultData3)
                 {
                     @Html.Raw(item);
                 };
