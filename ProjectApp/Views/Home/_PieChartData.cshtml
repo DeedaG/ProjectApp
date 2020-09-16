@@ -12,10 +12,11 @@ google.charts.load('current', { 'packages': ['corechart'] });
     function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-            ['Project Language', 'Frequency'],
-            ["C#", @Model.resultData["C#"]],
-            ["Ruby", @Model.resultData["Ruby"]],
-            ["React", @Model.resultData["React"]]
+             @{foreach (var item in @Model.resultData)
+                {
+                    @Html.Raw(item);
+                };
+              }
         ]);
 
         var data2 = google.visualization.arrayToDataTable([

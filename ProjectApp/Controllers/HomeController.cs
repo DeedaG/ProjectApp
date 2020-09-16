@@ -37,7 +37,24 @@ namespace ProjectApp.Controllers
 
             var langTypes = projects.GroupBy(x => x.Language).ToList();
 
-            var resultData = langTypes.ToDictionary(x => x.Key.ToString(), x => x.Count());
+            var freqOrder = new List<string>();
+
+            var freqData = langTypes.ToDictionary(x => x.Key.ToString(), x => x.Count());
+
+            foreach (var item in freqData)
+            {
+                freqOrder.Add(@"[""" + item.Key + @"""," + item.Value + @"]");
+            }
+
+            var resultData = new List<string>();
+
+            for (int i = 0; i < freqOrder.Count - 1; i++)
+            {
+                resultData.Add(freqOrder[i] + @",");
+            }
+
+            resultData.Add(freqOrder.Last());
+            resultData.Insert(0, @"[""Language"", ""Frequency""],");
 
             var projDates = new List<KeyValuePair<string, string>>();
 
