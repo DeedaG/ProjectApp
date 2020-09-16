@@ -13,51 +13,35 @@ google.charts.load('current', { 'packages': ['corechart'] });
 
         var data = google.visualization.arrayToDataTable([
             ['Project Language', 'Frequency'],
-            @*["C#", @Model.resultData["C#"]],*@
-            @*["Ruby", @Model.resultData["Ruby"]],*@
-        @*["React", @Model.resultData["React"]],*@
-
-            @*["@Model.projects[@Model.projects.Count - 7].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 7].Language]],*@
-
-            ["@Model.projects[@Model.projects.Count - 6].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 6].Language]],
-
-            ["@Model.projects[@Model.projects.Count - 5].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 5].Language]],
-
-            ["@Model.projects[@Model.projects.Count - 4].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 4].Language]],
-
-            ["@Model.projects[@Model.projects.Count - 3].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 3].Language]],
-
-            ["@Model.projects[@Model.projects.Count - 2].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 2].Language]],
-
-            ["@Model.projects[@Model.projects.Count - 1].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 1].Language]]
+            ["C#", @Model.resultData["C#"]],
+            ["Ruby", @Model.resultData["Ruby"]],
+            ["React", @Model.resultData["React"]]
         ]);
 
-        @*data.AddColumn('Project Language', 'Frequency');*@
-        @*data.AddRows([["@Model.projects[@Model.projects.Count - 1].Language", @Model.resultData[@Model.projects[@Model.projects.Count - 1].Language]]]);*@
-
-        
-
-
         var data2 = google.visualization.arrayToDataTable([
+
             ['Language', 'Days Coding'],
+            @*["C#", @Model.resultData2["C#"]],
+            ["Ruby", @Model.resultData2["Ruby"],
+            ["React", @Model.resultData2.["React"]]*@
+
             ["Ruby", 1],
             ["C#", 2],
             ["React", 1]
-        ]);
 
+        ]);
 
         var data3 = google.visualization.arrayToDataTable([
 
-            ['Name', 'Start Date'],
+            @{foreach (var item in @Model.resultData2)
+                {
+                    @Html.Raw(item);
+                };
+              }
 
-            ['NewTest1', 8 / 2 / 2020],
-
-            ['Test2', 7 / 1 / 2020],
-
-            ['test3', 8 / 31 / 2020]
         ]);
 
-         var options = {
+          var options = {
             backgroundColor: 'transparent',
             title: 'Languages',
             titleTextStyle: {

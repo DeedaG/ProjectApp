@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
+using Dapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -35,13 +37,28 @@ namespace ProjectApp.Controllers
 
             var langTypes = projects.GroupBy(x => x.Language).ToList();
 
-            //var langCount = langTypes.GroupBy(x => x).Select(x => x.Count()).ToList();
+            var resultData = langTypes.ToDictionary(x => x.Key.ToString(), x => x.Count());
 
-            var resultData = langTypes.GroupBy(x => x).ToDictionary(x => x.Key.Key.ToString(), x => x.Count());
+            var projDates = new List<KeyValuePair<string, string>>();
+
+            foreach (var p in projects)
+            {
+                projDates.Add(new KeyValuePair<string, string>(p.Name.ToString(), p.StartDate?.ToString("MM/dd/yyyy")));
+            }
+
+            var resultData2 = new List<string>();
+
+                for (int i = 0; i < projDates.Count - 1; i++)
+                {
+                    resultData2.Add(@"[""" + projDates[i].Key + @"""," + projDates[i].Value + "]" + ",");
+                }
+
+            resultData2.Add(@"[""" + projDates[projects.Count - 1].Key + @"""," + projDates[projects.Count - 1].Value + "]");
+            resultData2.Insert(0, @"[""Name"", ""Start Date""],");
 
             dynamic mymodel = new ExpandoObject();
             mymodel.resultData = resultData;
-            mymodel.projects = projects;
+            mymodel.resultData2 = @resultData2;
             mymodel.langTypes = langTypes;
             return View(mymodel);
         }
@@ -49,15 +66,6 @@ namespace ProjectApp.Controllers
         public IActionResult Privacy()
         {
             return View();
-        }
-
-        
-        public async Task<IActionResult> _DataForCharts()
-
-        {
-            //return View(await projects.ToListAsync());
-
-            return PartialView(await _context.ProjectViewModel.ToListAsync());
         }
 
 
