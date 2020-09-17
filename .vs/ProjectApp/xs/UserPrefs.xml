@@ -1,5 +1,5 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{85746ECD-50F5-49AD-A6EE-A34CD632C853}|ProjectApp">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectApp/Views/Project/Detail.cshtml">
     <Files>
       <File FileName="ProjectApp/Models/ProjectViewModel.cs" Line="25" Column="57" />
       <File FileName="ProjectApp/Views/Project/Index.cshtml" Line="26" Column="94" />
@@ -10,7 +10,6 @@
       <File FileName="ProjectApp/Views/Shared/_Layout.cshtml" Line="5" Column="77" />
       <File FileName="ProjectApp/Views/Home/Index.cshtml" Line="9" Column="8" />
       <File FileName="ProjectApp/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml" Line="4" Column="76" />
-      <File FileName="ProjectApp/Views/Shared/_LoginPartial.cshtml" Line="10" Column="25" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -33,10 +32,10 @@
               <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Project" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="_LoginPartial.cshtml" selected="True" />
+                <Node name="Project" expanded="True">
+                  <Node name="Detail.cshtml" selected="True" />
                 </Node>
+                <Node name="Shared" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True">
                 <Node name="css" expanded="True" />
