@@ -1,0 +1,40 @@
+﻿@model ProjectApp.Models.ProjectViewModel
+
+
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+<div class="text-center" style="float:left;width:30%;color:black">
+    <div style="text-align:left">
+        <div class="nav-item">
+            <h3>@Model.Name</h3>
+            <h4>Built with @Model.Language</h4>
+            <h4>Started @Model.StartDate?.ToString("MM/dd/yyyy")</h4>
+            <h4>Finished @Model.EndDate?.ToString("MM/dd/yyyy")</h4>
+
+            <h3>Notes:</h3>
+            <h4>@Model.Info</h4>
+            <a asp-action="AddorEdit" asp-route-id="@@Model.Id" class="text-dark">Edit</a><br>
+            <a asp-action="Delete" asp-route-id="@@Model.Id" class="text-danger ml-1"
+               onclick="return confirm('Are you sure you want to delete this record?')">Delete</a><br>
+            @if (@Model.EndDate == null)
+            {
+                <a asp-action="Index" syle="color: green" onclick="return confirm('@Model.Name is not finished')">
+                    Back to List
+                </a>
+            }
+            else
+            {
+                <a asp-action="Index" syle="color: green">
+                    Back to List
+                </a>
+            }
+        </div>
+    </div>
+</div>}
+<div class="text-right">
+    <img src="~/images/toolbox.jpg" class=".img-responsive" style="max-width: 40%; height:auto;" alt="My image" />
+</div>

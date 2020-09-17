@@ -154,6 +154,15 @@ namespace ProjectApp.Controllers
             //return RedirectToAction(nameof(Index));
         }
 
+        public ActionResult Detail(int Id)
+        {
+            {
+                var data = _context.ProjectViewModel.Where(x => x.Id == Id).SingleOrDefault();
+                return View(data);
+            }
+        }
+
+
         // Get: Project/Delete/id
         public async Task<IActionResult> Delete(int? id)
         {
