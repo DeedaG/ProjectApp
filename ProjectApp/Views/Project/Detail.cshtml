@@ -5,6 +5,10 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
+    <head>
+        <script src="https://kit.fontawesome.com/817e2bf535.js" crossorigin="anonymous"></script>
+    </head>
+
 @if (SignInManager.IsSignedIn(User))
 {
 <div class="text-center" style="float:left;width:30%;color:black">
@@ -17,19 +21,19 @@
 
             <h3>Notes:</h3>
             <h4>@Model.Info</h4>
-            <a asp-action="AddorEdit" asp-route-id="@Model.Id" style="color:green" class="text-dark">Edit</a><br>
+            <a asp-action="AddorEdit" asp-route-id="@Model.Id" style="color:green" class="text-dark"><i class="fas fa-eraser">Edit</i></a><br>
             <a asp-action="Delete" asp-route-id="@Model.Id" class="text-danger ml-1"
-               onclick="return confirm('Are you sure you want to delete this record?')">Delete</a><br>
+               onclick="return confirm('Are you sure you want to delete this record?')"><i class="fa fas fa-times-circle">Delete</i></a><br>
             @if (@Model.EndDate == null)
             {
                 <a asp-action="Index" syle="color: green" onclick="return confirm('@Model.Name is not finished')">
-                    Back to List
+                    <i class="fa fas fa-arrow-circle-left">Back to List</i>
                 </a>
             }
             else
             {
                 <a asp-action="Index" syle="color: green">
-                    Back to List
+                    <i class="fa fas fa-arrow-circle-left">Back to List</i>
                 </a>
             }
         </div>

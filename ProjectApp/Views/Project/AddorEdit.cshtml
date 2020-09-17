@@ -2,7 +2,11 @@
 
 @{ ViewData["Title"] = "Create"; }
 
-<h1>Project Form</h1>
+    <head>
+        <script src="https://kit.fontawesome.com/817e2bf535.js" crossorigin="anonymous"></script>
+    </head>
+
+<h1><i class="fa fad fa-pen-alt fa-2x">Project Details</i></h1>
 
 @if (TempData["Message"] != null)
 {
@@ -23,18 +27,14 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <partial name="_Calendar" />
-                <input type="submit" value="Update" class="btn btn-primary panel panel-success" />
+                <i class="fa fad fa-pen-alt fa-3x"><input type="submit" value="Update" class="btn btn-primary panel panel-success" /></i>
 
             </div>
         </form>
-        @*<a asp-action="Index">
-                <h3><i class="arrow alternate circle left icon">Back to List</i></h3>
-            </a>*@
-
     </div>
-    <div style="text-align:left">
-        <a asp-action="Index" syle="color: green">
-            <h3>Back to List</h3>
+    <div style="text-align:left" syle="background color:white">
+        <a asp-action="Index" >
+            <i class="fa arrow alternate circle left icon">Back to List</i>
         </a>
     </div>
 </div>
