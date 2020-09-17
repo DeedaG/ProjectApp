@@ -1,13 +1,14 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{85746ECD-50F5-49AD-A6EE-A34CD632C853}|ProjectApp">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="ProjectApp/Views/Home/_PieChartData.cshtml" Line="34" Column="54" />
-      <File FileName="ProjectApp/Controllers/ProjectController.cs" Line="150" Column="59" />
-      <File FileName="ProjectApp/Models/ProjectViewModel.cs" Line="20" Column="25" />
-      <File FileName="ProjectApp/Views/Project/Index.cshtml" Line="40" Column="25" />
+      <File FileName="ProjectApp/Views/Home/_PieChartData.cshtml" Line="13" Column="55" />
+      <File FileName="ProjectApp/Controllers/ProjectController.cs" Line="76" Column="37" />
+      <File FileName="ProjectApp/Models/ProjectViewModel.cs" Line="25" Column="57" />
+      <File FileName="ProjectApp/Views/Project/Index.cshtml" Line="60" Column="15" />
       <File FileName="ProjectApp/Views/Project/Detail.cshtml" Line="13" Column="33" />
-      <File FileName="ProjectApp/Views/Project/AddorEdit.cshtml" Line="50" Column="8" />
+      <File FileName="ProjectApp/Views/Project/AddorEdit.cshtml" Line="18" Column="95" />
       <File FileName="ProjectApp/Controllers/HomeController.cs" Line="79" Column="122" />
+      <File FileName="ProjectApp/Views/Project/_Calendar.cshtml" Line="15" Column="23" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -30,7 +31,7 @@
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
                 <Node name="Project" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
+                  <Node name="AddorEdit.cshtml" selected="True" />
                 </Node>
                 <Node name="Shared" expanded="True" />
               </Node>

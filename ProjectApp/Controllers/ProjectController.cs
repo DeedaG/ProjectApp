@@ -69,6 +69,7 @@ namespace ProjectApp.Controllers
             [Bind("Id,Name,Language,Info,StartDate,EndDate,ProjectDataId")]
             ProjectViewModel project)
         {
+
             if (ModelState.IsValid)
             {
 

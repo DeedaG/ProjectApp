@@ -1,0 +1,21 @@
+﻿@model ProjectApp.Models.ProjectViewModel
+
+        <div class="container">
+            @*<div class="row">*@
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker1'>
+                            @*<input type='text' class="form-control" />*@
+                            <span class="input-group-addon">
+                                @Html.EditorForModel()
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">$(function () {
+                    $('#@Html.IdForModel()').datetimepicker();
+                    format: 'LT'
+                });</script>
+            </div>
+

@@ -172,6 +172,7 @@
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/Debug/netcoreapp3.1/Razor/Views/Project/AddorEdit.cshtml.g.cs
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/Debug/netcoreapp3.1/Razor/Views/Project/Detail.cshtml.g.cs
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/Debug/netcoreapp3.1/Razor/Views/Project/Index.cshtml.g.cs
+/Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/Debug/netcoreapp3.1/Razor/Views/Project/_Calendar.cshtml.g.cs
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
 /Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_LoginPartial.cshtml.g.cs

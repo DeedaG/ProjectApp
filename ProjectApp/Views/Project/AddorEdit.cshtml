@@ -6,57 +6,39 @@
 
 @if (TempData["Message"] != null)
 {
-<div style="background-color: white; color: black; border-style: double" class = "col-md-3">
-    <div style="color:red" class="text-center">
-        @TempData["Message"]
+    <div style="background-color: white; color: black; border-style: double" class = "col-md-3">
+        <div style="color:red" class="text-center">
+            @TempData["Message"]
+        </div>
     </div>
-</div>
 }
 
 <hr />
-<div class="row text-center">
-    <div class="col-md-3">
+<div class="text-center">
+    <img src="~/images/projectpix.jpg" style="float:right" class="w-50 h-50" alt="My image" />
+    <div style="text-align:left">
+        @*<div class="col-md-3" style="float:left">*@
         <form asp-action="AddorEdit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <div>
-                    <label for="ProjectName">Name:</label>
-                    <input type="text" id="Name" name="Name" value="@Model.Name" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-                <div>
-                    <label for="Language">Language:</label>
-                    <input type="text" id="Language" name="Language" value="@Model.Language" />
-                    <span asp-validation-for="Language" class="text-danger"></span>
-                </div>
-                <div>
-                    <label for="Info">Details:</label>
-                    <input type="text" id="Info" name="Info" value="@Model.Info" />
-                </div>
-                <div>
-                    <label for="StartDate">Start Date:</label>
-                    <input class="ProjectDate" type="text" id="StartDate" name="StartDate" value="@Model.StartDate" />
-                    <span asp-validation-for="StartDate" class="text-danger"></span>
-                </div>
-                <div>
-                    <label for="EndDate">End Date:</label>
-                    <input class="ProjectDate" type="text" id="EndDate" name="EndDate" value="@Model.EndDate" />
-                </div>
+                <partial name="_Calendar" />
                 <input type="submit" value="Update" class="btn btn-primary panel panel-success" />
 
             </div>
         </form>
-        <a asp-action="Index">
-            <h3><i class="arrow alternate circle left icon">Back to List</i></h3>
-        </a>
+        @*<a asp-action="Index">
+                <h3><i class="arrow alternate circle left icon">Back to List</i></h3>
+            </a>*@
 
     </div>
-    <img src="~/images/projectpix.jpg" class="w-50 h-50" alt="My image" />
+    <div style="text-align:left">
+        <a asp-action="Index" syle="color: green">
+            <h3>Back to List</h3>
+        </a>
+    </div>
 </div>
 
-
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

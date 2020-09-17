@@ -51,7 +51,7 @@
                 <th>@item.StartDate</th>
                 <th>@item.EndDate</th>
                 <td>
-                    <a asp-action="AddorEdit" asp-route-id="@item.Id" class="text-dark">Edit</a>
+                    <a asp-action="AddorEdit" asp-route-id="@item.Id" style="color:green" class="text-dark">Edit</a>
                     <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger ml-1"
                        onclick="return confirm('Are you sure you want to delete this record?')">Delete</a>
 
