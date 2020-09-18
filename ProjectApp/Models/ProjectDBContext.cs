@@ -10,6 +10,7 @@ public class ProjectDBContext : DbContext
 
     public DbSet<ProjectApp.Models.ProjectViewModel> ProjectViewModel { get; set; }
     public DbSet<ProjectApp.Models.ChartData> ChartData { get; set; }
+    public DbSet<ProjectApp.Models.ReportJournal> ReportJournal { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

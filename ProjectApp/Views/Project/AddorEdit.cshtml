@@ -6,7 +6,9 @@
         <script src="https://kit.fontawesome.com/817e2bf535.js" crossorigin="anonymous"></script>
     </head>
 
-<h1><i class="fa fad fa-pen-alt fa-lg">Project Details</i></h1>
+<h1><i class="fa fa-cogs">
+       @*class="fa fad fa-pen-alt fa-lg">*@
+    Project Details</i></h1>
 
 @if (TempData["Message"] != null)
 {
@@ -26,8 +28,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <partial name="_Calendar" />
-                <i class="fa fad fa-pen-alt fa-lg"><input type="submit" value="Update" class="btn btn-primary panel panel-success" /></i>
+                <partial name="_Calendar" /><input type="submit" value="Update" class="btn btn-primary panel panel-success" />
 
             </div>
         </form>

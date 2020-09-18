@@ -1,15 +1,15 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{85746ECD-50F5-49AD-A6EE-A34CD632C853}|ProjectApp">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectApp/Views/Project/Detail.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectApp/Views/Project/_Calendar.cshtml">
     <Files>
-      <File FileName="ProjectApp/Models/ProjectViewModel.cs" Line="25" Column="57" />
-      <File FileName="ProjectApp/Views/Project/Index.cshtml" Line="26" Column="94" />
-      <File FileName="ProjectApp/Views/Project/Detail.cshtml" Line="33" Column="17" />
-      <File FileName="ProjectApp/Views/Project/AddorEdit.cshtml" Line="7" Column="12" />
-      <File FileName="ProjectApp/Controllers/HomeController.cs" Line="79" Column="122" />
-      <File FileName="ProjectApp/Views/Project/_Calendar.cshtml" Line="4" Column="12" />
-      <File FileName="ProjectApp/Views/Shared/_Layout.cshtml" Line="5" Column="77" />
-      <File FileName="ProjectApp/Views/Home/Index.cshtml" Line="9" Column="8" />
-      <File FileName="ProjectApp/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml" Line="4" Column="76" />
+      <File FileName="ProjectApp/Models/ProjectViewModel.cs" Line="1" Column="1" />
+      <File FileName="ProjectApp/Models/ProjectDBContext.cs" Line="9" Column="6" />
+      <File FileName="ProjectApp/Models/ApplicationUser.cs" Line="12" Column="61" />
+      <File FileName="ProjectApp/Models/ReportJournal.cs" Line="1" Column="14" />
+      <File FileName="ProjectApp/Startup.cs" Line="1" Column="1" />
+      <File FileName="ProjectApp/Migrations/ProjectDB/ProjectDBContextModelSnapshot.cs" Line="100" Column="48" />
+      <File FileName="ProjectApp/Views/Project/Detail.cshtml" Line="1" Column="1" />
+      <File FileName="ProjectApp/Views/Project/AddorEdit.cshtml" Line="19" Column="11" />
+      <File FileName="ProjectApp/Views/Project/_Calendar.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,14 +26,16 @@
               </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="Migrations" expanded="True">
-                <Node name="ProjectDB" expanded="True" />
+                <Node name="ProjectDB" expanded="True">
+                  <Node name="20200918025201_AddReportJJournal.cs" expanded="True" />
+                </Node>
               </Node>
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
                 <Node name="Project" expanded="True">
-                  <Node name="Detail.cshtml" selected="True" />
+                  <Node name="_Calendar.cshtml" selected="True" />
                 </Node>
                 <Node name="Shared" expanded="True" />
               </Node>
