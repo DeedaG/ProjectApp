@@ -10,7 +10,7 @@ namespace ProjectApp.Models
         public bool NameChange { get; set; }
         public string ProjLanguage { get; set; }
         public bool LanguageChange { get; set; }
-        public int ShortTime { get; set; }
-        public int LongTime { get; set; }
+        public int DevTime { get; set; }
+        public int ChangeCount { get; set; }
     }
 }
