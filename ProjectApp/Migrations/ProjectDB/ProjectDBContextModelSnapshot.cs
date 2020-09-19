@@ -136,7 +136,8 @@ namespace ProjectApp.Migrations.ProjectDB
                             Language = "Ruby",
                             Name = "Test1",
                             ProjectDataId = 1,
-                            StartDate = new DateTime(2020, 9, 17, 21, 52, 1, 85, DateTimeKind.Local).AddTicks(7470)
+                            ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
+                            StartDate = new DateTime(2020, 9, 18, 20, 47, 30, 610, DateTimeKind.Local).AddTicks(5210)
                         },
                         new
                         {
@@ -145,7 +146,8 @@ namespace ProjectApp.Migrations.ProjectDB
                             Language = "React",
                             Name = "Test2",
                             ProjectDataId = 1,
-                            StartDate = new DateTime(2020, 9, 17, 21, 52, 1, 101, DateTimeKind.Local).AddTicks(380)
+                            ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
+                            StartDate = new DateTime(2020, 9, 18, 20, 47, 30, 625, DateTimeKind.Local).AddTicks(8010)
                         },
                         new
                         {
@@ -154,7 +156,7 @@ namespace ProjectApp.Migrations.ProjectDB
                             Language = "C#",
                             Name = "Test3",
                             ProjectDataId = 1,
-                            StartDate = new DateTime(2020, 9, 17, 21, 52, 1, 101, DateTimeKind.Local).AddTicks(440)
+                            StartDate = new DateTime(2020, 9, 18, 20, 47, 30, 625, DateTimeKind.Local).AddTicks(8080)
                         });
                 });
 
@@ -167,10 +169,13 @@ namespace ProjectApp.Migrations.ProjectDB
                     b.Property<string>("Author")
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("LanguageChange")
+                    b.Property<int>("ChangeCount")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("LongTime")
+                    b.Property<int>("DevTime")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("LanguageChange")
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("NameChange")
@@ -178,9 +183,6 @@ namespace ProjectApp.Migrations.ProjectDB
 
                     b.Property<string>("ProjLanguage")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("ShortTime")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

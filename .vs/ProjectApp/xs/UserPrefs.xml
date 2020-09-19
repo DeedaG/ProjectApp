@@ -1,50 +1,38 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{85746ECD-50F5-49AD-A6EE-A34CD632C853}|ProjectApp">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectApp/Views/Project/_Calendar.cshtml">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{85746ECD-50F5-49AD-A6EE-A34CD632C853}|Default">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="ProjectApp/Models/ProjectViewModel.cs" Line="1" Column="1" />
-      <File FileName="ProjectApp/Models/ProjectDBContext.cs" Line="9" Column="6" />
-      <File FileName="ProjectApp/Models/ApplicationUser.cs" Line="12" Column="61" />
-      <File FileName="ProjectApp/Models/ReportJournal.cs" Line="1" Column="14" />
-      <File FileName="ProjectApp/Startup.cs" Line="1" Column="1" />
-      <File FileName="ProjectApp/Migrations/ProjectDB/ProjectDBContextModelSnapshot.cs" Line="100" Column="48" />
-      <File FileName="ProjectApp/Views/Project/Detail.cshtml" Line="1" Column="1" />
-      <File FileName="ProjectApp/Views/Project/AddorEdit.cshtml" Line="19" Column="11" />
-      <File FileName="ProjectApp/Views/Project/_Calendar.cshtml" Line="1" Column="1" />
+      <File FileName="ProjectApp/Controllers/HomeController.cs" Line="69" Column="14" />
+      <File FileName="ProjectApp/Views/Home/_PieChartData.cshtml" Line="1" Column="1" />
+      <File FileName="ProjectApp/Startup.cs" Line="27" Column="1" />
+      <File FileName="ProjectApp/Models/ProjectDBContext.cs" Line="9" Column="1" />
+      <File FileName="ProjectApp/Areas/Identity/IdentityHostingStartup.cs" Line="20" Column="1" />
+      <File FileName="ProjectApp/Areas/Identity/Data/ProjectAppIdentityDbContext.cs" Line="14" Column="1" />
+      <File FileName="ProjectApp/Controllers/ProjectController.cs" Line="76" Column="37" />
+      <File FileName="ProjectApp/Models/ProjectViewModel.cs" Line="27" Column="32" />
+      <File FileName="ProjectApp/Models/ModelBuilderExtensions.cs" Line="21" Column="38" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ProjectApp" expanded="True">
-            <Node name="Solution Items" expanded="True" />
             <Node name="ProjectApp" expanded="True">
-              <Node name="Dependencies" expanded="True" />
               <Node name="Areas" expanded="True">
                 <Node name="Identity" expanded="True">
                   <Node name="Data" expanded="True" />
-                  <Node name="Pages" expanded="True" />
                 </Node>
               </Node>
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
               <Node name="Migrations" expanded="True">
-                <Node name="ProjectDB" expanded="True">
-                  <Node name="20200918025201_AddReportJJournal.cs" expanded="True" />
-                </Node>
+                <Node name="ProjectDB" expanded="True" />
+                <Node name="20200827144852_Initial Create.cs" expanded="True" />
               </Node>
               <Node name="Models" expanded="True" />
-              <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Project" expanded="True">
-                  <Node name="_Calendar.cshtml" selected="True" />
-                </Node>
-                <Node name="Shared" expanded="True" />
+                <Node name="Project" expanded="True" />
               </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="css" expanded="True" />
-                <Node name="js" expanded="True" />
-                <Node name="lib" expanded="True" />
-              </Node>
-              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -54,7 +42,12 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/christiatidwell/Projects/ProjectApp/ProjectApp/Controllers/ProjectController.cs" relfile="ProjectApp/Controllers/ProjectController.cs" line="96" column="1" />
+      <Breakpoint file="/Users/christiatidwell/Projects/ProjectApp/ProjectApp/Controllers/ProjectController.cs" relfile="ProjectApp/Controllers/ProjectController.cs" line="78" column="1" />
+      <Breakpoint file="/Users/christiatidwell/Projects/ProjectApp/ProjectApp/Controllers/HomeController.cs" relfile="ProjectApp/Controllers/HomeController.cs" line="64" column="1" />
+      <Breakpoint file="/Users/christiatidwell/Projects/ProjectApp/ProjectApp/Controllers/HomeController.cs" relfile="ProjectApp/Controllers/HomeController.cs" line="59" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.ProjectApp PreferredExecutionTarget="/Applications/Google Chrome.app" />

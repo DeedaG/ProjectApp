@@ -14,7 +14,7 @@
         "outputPath": "/Users/christiatidwell/Projects/ProjectApp/ProjectApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/christiatidwell/.nuget/NuGet/NuGet.Config"
+          "/Users/christiatidwell/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -113,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
         }
       }
     }

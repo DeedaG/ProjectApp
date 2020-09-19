@@ -8,6 +8,7 @@ using Dapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ProjectApp.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -30,8 +31,7 @@ namespace ProjectApp.Controllers
         {
             var userId = _userManager.GetUserId(this.HttpContext.User);
             var projects = await _context.ProjectViewModel
-                .Where(x => x.ProjectUserId
-                .Equals(userId))
+                .Where(x => x.ProjectUserId.Equals(userId))
                 .AsNoTracking()
                 .ToListAsync();
 
@@ -47,19 +47,19 @@ namespace ProjectApp.Controllers
             {
                 resultData.Add(freqOrder[i] + @",");
             }
-            resultData.Add(freqOrder.Last());
+            if (freqOrder.Count >= 1)
+            {
+                resultData.Add(freqOrder[freqOrder.Count - 1]);
+            }
+            //resultData.Add(freqOrder.Last());
             resultData.Insert(0, @"[""Language"", ""Frequency""],");
 
 
             var projTime = new List<KeyValuePair<string, string>>();
-            foreach (var p in projects)
-            {
-                if (p.EndDate != null)
-                {
-                    TimeSpan? difference = p.EndDate - p.StartDate;
+            foreach (var p in projects.Where(x => !x.EndDate.Equals(null)))
+                { TimeSpan? difference = p.EndDate - p.StartDate;
                     projTime.Add(new KeyValuePair<string, string>(p.Language.ToString(), difference.Value.TotalDays.ToString()));
                 }
-            }
             var resultData2 = new List<string>();
             for (int i = 0; i < projTime.Count - 1; i++)
             {
@@ -70,6 +70,11 @@ namespace ProjectApp.Controllers
                 resultData2.Add(@"[""" + projTime[projTime.Count - 1].Key + @"""," + projTime[projTime.Count - 1].Value + "]");
             }
             resultData2.Insert(0, @"[""Language"", ""Days Coding""],");
+
+
+
+
+
 
 
             var projDates = new List<KeyValuePair<string, string>>();

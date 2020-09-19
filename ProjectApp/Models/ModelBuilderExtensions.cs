@@ -17,8 +17,8 @@ namespace ProjectApp.Models
                     Language = "Ruby",
                     Info = "test1",
                     StartDate = DateTime.Now,
-                    EndDate = null,
-                    //ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
+                    EndDate = DateTime.Now,
+                    ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
                     ProjectDataId = 1
                 },
 
@@ -29,8 +29,8 @@ namespace ProjectApp.Models
                 Language = "React",
                 Info = "test2",
                 StartDate = DateTime.Now,
-                EndDate = null,
-                //ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
+                EndDate = DateTime.Now,
+                ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
                 ProjectDataId = 1
             },
 
@@ -41,8 +41,8 @@ namespace ProjectApp.Models
                 Language = "C#",
                 Info = "test2",
                 StartDate = DateTime.Now,
-                EndDate = null,
-                //ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
+                EndDate = DateTime.Now,
+                ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
                 ProjectDataId = 1
             });
 
