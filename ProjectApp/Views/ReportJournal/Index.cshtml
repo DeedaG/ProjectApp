@@ -1,0 +1,70 @@
+@model IEnumerable<ProjectApp.Models.ReportJournal>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1><i class="fa fa-line-chart"> Progress Report</i></h1>
+
+<p>
+    @*<a asp-action="Create">Create New</a>*@
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                Technologies
+                @*@Html.DisplayNameFor(model => model.ProjLanguage)*@
+            </th>
+            <th>
+                Time Developing
+                @*@Html.DisplayNameFor(model => model.DevTime)*@
+            </th>
+            <th>
+                Changed Language?
+                @*@Html.DisplayNameFor(model => model.LanguageChange)*@
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.NameChange)*@
+                Changed Name?
+            </th>
+            <th>
+                Change Frequency
+                @*@Html.DisplayNameFor(model => model.ChangeCount)*@
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjLanguage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DevTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LanguageChange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameChange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChangeCount)
+            </td>
+            <td>
+                @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
+                @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
+                @*<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
