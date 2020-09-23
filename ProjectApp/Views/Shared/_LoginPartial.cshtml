@@ -12,9 +12,10 @@
 {
     <div class="nav-item">
         <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
-        <a class="nav-link text-dark" asp-area="" asp-controller="Project" asp-action="Index"><i class="fa fad fa-list-ol">Project List</i></a>
-        <a class="nav-link text-dark" asp-area="" asp-controller="Project" asp-action="AddorEdit"><i class="fa fad fa-pen-alt">Add New Project</i></a>
-    <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Project" asp-action="Index">Project List</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Project" asp-action="AddorEdit">Add New Project</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="ReportJournal" asp-action="Index">Progress Report</a>
+        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
             <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
         </form>
     </div>

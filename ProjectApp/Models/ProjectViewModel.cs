@@ -30,6 +30,10 @@ namespace ProjectApp.Models
         [ReadOnly(true)]
         [ScaffoldColumn(false)]
         public int ProjectDataId { get; set; }
+        public ReportJournal Report { get; set; }
+        [ReadOnly(true)]
+        [ScaffoldColumn(false)]
+        public int ReportJournalId { get; set; }
 
         //[NotMapped]
         //public bool checkboxAnswer { get; set; }

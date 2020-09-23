@@ -66,7 +66,7 @@ namespace ProjectApp.Controllers
         [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddorEdit(int Id,
-            [Bind("Id,Name,Language,Info,StartDate,EndDate,ProjectDataId")]
+            [Bind("Id,Name,Language,Info,StartDate,EndDate,ProjectDataId,ReportJournalId")]
             ProjectViewModel project)
         {
 
@@ -77,7 +77,9 @@ namespace ProjectApp.Controllers
                 {
                     var userId = _userManager.GetUserId(this.HttpContext.User);
                     project.ProjectUserId = userId;
+                    //project.ReportJournalId = project.Id;
 
+                    //var report = _context.ReportJournal.Find(Id = 1);
                     var projects = await _context.ProjectViewModel.Where(x => x.ProjectUserId.Equals(userId)).AsNoTracking().ToListAsync();
                     var allChartData = await _context.ChartData.Where(x => x.ChartUserId.Equals(userId)).AsNoTracking().ToListAsync();
                     var langTypes = projects.GroupBy(x => x.Language).ToList();
@@ -92,13 +94,14 @@ namespace ProjectApp.Controllers
 
                             _context.Add(project);
                             _context.Update(c);
+                            //_context.Update(report);
                             c.DataForProjects.Add(project);
+
                             await _context.SaveChangesAsync();
                             //return RedirectToAction(nameof(Index));
                             TempData["Message"] = "Project Created!";
                             return View(project);
                         }
-
 
                         else
                         {
@@ -111,6 +114,7 @@ namespace ProjectApp.Controllers
 
                             _context.Add(project);
                             _context.Add(newChartData);
+                            //_context.Add(report);
                             project.ProjectDataId = newChartData.Id;
                             newChartData.DataForProjects.Add(project);
                             await _context.SaveChangesAsync();
@@ -126,9 +130,7 @@ namespace ProjectApp.Controllers
                     var userId = _userManager.GetUserId(this.HttpContext.User);
                     var currentProjects = await _context.ProjectViewModel.Where(x => x.ProjectUserId.Equals(userId)).AsNoTracking().ToListAsync();
                     var allCurrentChartData = await _context.ChartData.Where(x => x.ChartUserId.Equals(userId)).AsNoTracking().ToListAsync();
-                    //var currentLangTypes = currentProjects.GroupBy(x => x.Language).ToList();
-
-                    //var frequencyData = currentLangTypes.GroupBy(x => x).ToDictionary(x => x.Key.Key, x => x.Count());
+                    //var report = _context.ReportJournal.Where(x => x.Id.Equals(project.ReportJournalId));
 
                     foreach (var c in allCurrentChartData)
                     {
@@ -136,6 +138,7 @@ namespace ProjectApp.Controllers
 
                         _context.Update(project);
                         _context.Update(c);
+                        //_context.Update(report);
                         await _context.SaveChangesAsync();
                         TempData["Message"] = "Project Updated!";
                         //return RedirectToAction(nameof(Index));

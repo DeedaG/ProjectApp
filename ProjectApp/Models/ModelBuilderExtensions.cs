@@ -19,7 +19,8 @@ namespace ProjectApp.Models
                     StartDate = DateTime.Now,
                     EndDate = DateTime.Now,
                     ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
-                    ProjectDataId = 1
+                    ProjectDataId = 1,
+                    ReportJournalId = 1
                 },
 
             new ProjectViewModel
@@ -31,7 +32,8 @@ namespace ProjectApp.Models
                 StartDate = DateTime.Now,
                 EndDate = DateTime.Now,
                 ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
-                ProjectDataId = 1
+                ProjectDataId = 1,
+                ReportJournalId = 1
             },
 
             new ProjectViewModel
@@ -43,7 +45,8 @@ namespace ProjectApp.Models
                 StartDate = DateTime.Now,
                 EndDate = DateTime.Now,
                 ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
-                ProjectDataId = 1
+                ProjectDataId = 1,
+                ReportJournalId = 1
             });
 
             modelBuilder.Entity<ChartData>().HasData(
@@ -51,6 +54,18 @@ namespace ProjectApp.Models
                 {
                     Id = 1,
                     ChartUserId = "93879f86-de21-4285-8b8f-2f76770859cc"
+                });
+
+            modelBuilder.Entity<ReportJournal>().HasData(
+                new ReportJournal
+                {
+                    Id = 1,
+                    Author = "JohnDoe",
+                    NameChange = false,
+                    ProjLanguage = "C#",
+                    LanguageChange = false,
+                    DevTime = 1,
+                    ChangeCount = 0
                 });
         }
     }

@@ -2,14 +2,16 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ProjectApp.Migrations.ProjectDB
 {
     [DbContext(typeof(ProjectDBContext))]
-    partial class ProjectDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200921194808_AddColumnToReportJournal")]
+    partial class AddColumnToReportJournal
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -137,38 +139,38 @@ namespace ProjectApp.Migrations.ProjectDB
                         new
                         {
                             Id = 1,
-                            EndDate = new DateTime(2020, 9, 21, 20, 11, 46, 129, DateTimeKind.Local).AddTicks(3730),
+                            EndDate = new DateTime(2020, 9, 21, 14, 48, 8, 85, DateTimeKind.Local).AddTicks(8920),
                             Info = "test1",
                             Language = "Ruby",
                             Name = "Test1",
                             ProjectDataId = 1,
                             ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
                             ReportJournalId = 1,
-                            StartDate = new DateTime(2020, 9, 21, 20, 11, 46, 111, DateTimeKind.Local).AddTicks(8800)
+                            StartDate = new DateTime(2020, 9, 21, 14, 48, 8, 70, DateTimeKind.Local).AddTicks(430)
                         },
                         new
                         {
                             Id = 2,
-                            EndDate = new DateTime(2020, 9, 21, 20, 11, 46, 129, DateTimeKind.Local).AddTicks(5630),
+                            EndDate = new DateTime(2020, 9, 21, 14, 48, 8, 86, DateTimeKind.Local).AddTicks(670),
                             Info = "test2",
                             Language = "React",
                             Name = "Test2",
                             ProjectDataId = 1,
                             ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
                             ReportJournalId = 1,
-                            StartDate = new DateTime(2020, 9, 21, 20, 11, 46, 129, DateTimeKind.Local).AddTicks(5600)
+                            StartDate = new DateTime(2020, 9, 21, 14, 48, 8, 86, DateTimeKind.Local).AddTicks(650)
                         },
                         new
                         {
                             Id = 3,
-                            EndDate = new DateTime(2020, 9, 21, 20, 11, 46, 129, DateTimeKind.Local).AddTicks(5680),
+                            EndDate = new DateTime(2020, 9, 21, 14, 48, 8, 86, DateTimeKind.Local).AddTicks(710),
                             Info = "test2",
                             Language = "C#",
                             Name = "Test3",
                             ProjectDataId = 1,
                             ProjectUserId = "93879f86-de21-4285-8b8f-2f76770859cc",
                             ReportJournalId = 1,
-                            StartDate = new DateTime(2020, 9, 21, 20, 11, 46, 129, DateTimeKind.Local).AddTicks(5670)
+                            StartDate = new DateTime(2020, 9, 21, 14, 48, 8, 86, DateTimeKind.Local).AddTicks(700)
                         });
                 });
 
