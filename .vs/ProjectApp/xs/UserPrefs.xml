@@ -1,12 +1,11 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{85746ECD-50F5-49AD-A6EE-A34CD632C853}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="ProjectApp/Controllers/ProjectController.cs" Line="89" Column="52" />
-      <File FileName="ProjectApp/Models/ReportJournal.cs" Line="8" Column="6" />
-      <File FileName="ProjectApp/Controllers/HomeController.cs" Line="35" Column="32" />
-      <File FileName="ProjectApp/Views/ReportJournal/Index.cshtml" Line="42" Column="1" />
-      <File FileName="ProjectApp/Views/ReportJournal/Details.cshtml" Line="7" Column="6" />
-      <File FileName="ProjectApp/Controllers/ReportJournal.cs" Line="24" Column="1" />
+      <File FileName="ProjectApp/Controllers/ReportJournalController.cs" Line="36" Column="1" />
+      <File FileName="ProjectApp/Controllers/ProjectController.cs" Line="75" Column="18" />
+      <File FileName="ProjectApp/Controllers/HomeController.cs" Line="77" Column="39" />
+      <File FileName="ProjectApp/Models/ProjectViewModel.cs" Line="1" Column="1" />
+      <File FileName="ProjectApp/Models/ReportJournal.cs" Line="14" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,7 +17,9 @@
                   <Node name="Data" expanded="True" />
                 </Node>
               </Node>
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="ReportJournalController.cs" selected="True" />
+              </Node>
               <Node name="Migrations" expanded="True">
                 <Node name="ProjectDB" expanded="True">
                   <Node name="20200921194808_AddColumnToReportJournal.cs" expanded="True" />
@@ -30,9 +31,7 @@
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
                 <Node name="ReportJournal" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="_LoginPartial.cshtml" selected="True" />
-                </Node>
+                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -44,7 +43,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/christiatidwell/Projects/ProjectApp/ProjectApp/Controllers/ReportJournalController.cs" relfile="ProjectApp/Controllers/ReportJournalController.cs" line="24" column="1" />
+      <Breakpoint file="/Users/christiatidwell/Projects/ProjectApp/ProjectApp/Controllers/ReportJournalController.cs" relfile="ProjectApp/Controllers/ReportJournalController.cs" line="25" column="1" />
+      <Breakpoint file="/Users/christiatidwell/Projects/ProjectApp/ProjectApp/Controllers/ReportJournalController.cs" relfile="ProjectApp/Controllers/ReportJournalController.cs" line="26" column="1" />
+      <Breakpoint file="/Users/christiatidwell/Projects/ProjectApp/ProjectApp/Controllers/ReportJournalController.cs" relfile="ProjectApp/Controllers/ReportJournalController.cs" line="34" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

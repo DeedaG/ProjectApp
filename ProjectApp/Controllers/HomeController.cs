@@ -51,7 +51,6 @@ namespace ProjectApp.Controllers
             {
                 resultData.Add(freqOrder[freqOrder.Count - 1]);
             }
-            //resultData.Add(freqOrder.Last());
             resultData.Insert(0, @"[""Language"", ""Frequency""],");
 
 
@@ -72,15 +71,11 @@ namespace ProjectApp.Controllers
             resultData2.Insert(0, @"[""Language"", ""Days Coding""],");
 
 
-
-
-
-
-
             var projDates = new List<KeyValuePair<string, string>>();
             foreach (var p in projects)
             {
-                if (p.EndDate == null) {
+                if (p.EndDate == null)
+                {
                     projDates.Add(new KeyValuePair<string, string>(p.Name.ToString(), p.StartDate?.ToString("MM/dd/yyyy")));
                 }
             }

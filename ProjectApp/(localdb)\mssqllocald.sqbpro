@@ -1,305 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/christiatidwell/Projects/ProjectApp/ProjectApp/(localdb)\mssqllocaldb" readonly="0" foreign_keys="0" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="0" synchronous="1"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="3718"/><column_width id="4" width="0"/></tab_structure><tab_browse><current_table name="4,15:mainApplicationUser"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="ApplicationUser" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="18"/><column index="2" value="61"/><column index="3" value="120"/><column index="4" value="37"/><column index="5" value="96"/><column index="6" value="90"/><column index="7" value="84"/><column index="8" value="82"/><column index="9" value="105"/><column index="10" value="81"/><column index="11" value="134"/><column index="12" value="103"/><column index="13" value="68"/><column index="14" value="90"/><column index="15" value="105"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="Edit Trigger journal_update">DROP TRIGGER &quot;main&quot;.&quot;journal_update&quot;;
-CREATE TRIGGER journal_update AFTER INSERT
-ON ProjectViewModel
-BEGIN
-
- INSERT INTO ReportJournal(Id, Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-
---  SELECT Id from ProjectViewModel;
---  
---  SELECT UserName        
-FROM ApplicationUser   
-INNER JOIN ProjectViewModel  
-on ApplicationUser.Id=ProjectViewModel.ProjectUserId;
-
-  Values (ProjectViewModel.Id, ApplicationUser.UserName, False, ProjectViewModel.Language, False, 1, 0);
---   EndDate - StartDate),
---   0) from ProjectViewModel;
-   
-END</sql><sql name="SQL 1">CREATE TRIGGER journal_names AFTER UPDATE of Name
-ON ProjectViewModel
-BEGIN
-   INSERT INTO ReportJournal(Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-   VALUES (ProjectUserId.UserName, 'True', Language, 'False', (EndDate - StartDate), ChangeCount + 1);
-	END;</sql><sql name="Edit Trigger journal_insert">DROP TRIGGER &quot;main&quot;.&quot;journal_insert&quot;;
-CREATE TRIGGER journal_insert AFTER INSERT 
-ON ProjectViewModel
-BEGIN
-   INSERT INTO ReportJournal(Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-   VALUES (ProjectUserId, 'False', Language, 'False', (EndDate - StartDate), 0);
-	END</sql><sql name="Edit Trigger journal_languages">DROP TRIGGER &quot;main&quot;.&quot;journal_languages&quot;;
-CREATE TRIGGER journal_languages AFTER UPDATE of Language
-ON ProjectViewModel
-BEGIN
-   INSERT INTO ReportJournal(Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-   VALUES (ProjectUserId, 'False', Language, 'True', (EndDate - StartDate), ChangeCount + 1);
-	END</sql><sql name="Edit Trigger journal_names">Update ProjectViewModel
-set ProjectDataId = '2'
-Where Name = 'Something Else'</sql><sql name="Edit Trigger journal_insert">DROP TRIGGER &quot;main&quot;.&quot;journal_insert&quot;;
-CREATE TRIGGER journal_insert AFTER INSERT 
-ON ProjectViewModel
-BEGIN
-   INSERT INTO ReportJournal(Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-   VALUES (UserId, 'False', Language, 'False', (EndDate - StartDate), 0);
-	END</sql><sql name="Edit Trigger journal_insert">ALTER TABLE ReportJournal_X RENAME TO ReportJournal;</sql><sql name="Edit Trigger journal_languages">DROP TRIGGER &quot;main&quot;.&quot;journal_languages&quot;;
-CREATE TRIGGER journal_languages AFTER UPDATE of Language
-ON ProjectViewModel
-BEGIN
-   INSERT INTO ReportJournal(Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-   VALUES (ProjectUserId, 'False', Language, 'True', (EndDate - StartDate), ChangeCount + 1);
-	END</sql><sql name="Edit Trigger journal_insert">DROP TRIGGER &quot;main&quot;.&quot;journal_insert&quot;;
-CREATE TRIGGER journal_insert AFTER INSERT 
-ON ProjectViewModel
-BEGIN
-   INSERT INTO ReportJournal(Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-   VALUES (ProjectUserId, 'False', Language, 'False', (EndDate - StartDate), 0);
-	END</sql><sql name="Edit Trigger journal_languages">DROP TRIGGER &quot;main&quot;.&quot;journal_languages&quot;;
-CREATE TRIGGER journal_languages AFTER UPDATE of Language
-ON ProjectViewModel
-BEGIN
-   INSERT INTO ReportJournal(Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-   VALUES (UserId, 'False', Language, 'True', (EndDate - StartDate), ChangeCount + 1);
-	END
-	</sql><sql name="Edit Trigger journal_insert">DROP TRIGGER &quot;main&quot;.&quot;journal_insert&quot;;
-CREATE TRIGGER journal_insert AFTER INSERT 
-ON ProjectViewModel
-BEGIN
-   INSERT INTO ReportJournal(Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-   VALUES (UserId, 'False', Language, 'False', (EndDate - StartDate), 0);
-	END</sql><sql name="Edit Trigger journal_names">Update ProjectViewModel
-set StartDate = '2020-02-01 00:00:00'
-Where Id = '3'</sql><sql name="Edit Trigger journal_insert">
-CREATE TRIGGER journal_insert AFTER INSERT 
-ON ProjectViewModel 
-
-BEGIN
-
-   INSERT INTO ReportJournal (Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-   
-   SELECT (EndDate - StartDate) AS DTIME
-	WHERE EndDate IS NOT NULL;
-	SELECT (datetime.Now - StartDate) AS DTIME
-   WHERE EndDate IS NULL;
-   
-   SELECT UserName FROM ApplicationUser [INNER] JOIN ProjectViewModel WHERE ApplicationUser.Id = ProjectViewModel.ProjectUserId;
-   VALUES (UserName, False, Language, False,  (DTIME),
-		0);	
-		
-	END;</sql><sql name="Edit Trigger journal_insert">CREATE TRIGGER journal_insert AFTER INSERT 
-ON ProjectViewModel 
-
-BEGIN
-
-   INSERT INTO ReportJournal (Author, NameChange, ProjLanguage, LanguageChange) 
-   
-   SELECT UserName FROM ApplicationUser [INNER] JOIN ProjectViewModel WHERE Id = ProjectViewModel.ProjectUserId;
-   VALUES (UserName, False, Language, False);	
-		
-INSERT INTO ReportJournal (DevTime, ChangeCount) 
-   
-   SELECT (EndDate - StartDate) from ProjectViewModel AS DTIME
-	WHERE EndDate IS NOT NULL;
-	SELECT (datetime.Now - StartDate) from ProjectViewModel AS DTIME
-   WHERE EndDate IS NULL;		
-		VALUES (DTIME, 0);
-	END</sql><sql name="Edit Trigger journal_insert">
-
-   INSERT INTO ReportJournal 
-   VALUES (2, &quot;TrialRun&quot;, False, &quot;C#&quot;, False, 1, 0);
-   
-  </sql><sql name="Edit Trigger journal_insert">CREATE TRIGGER journal_update AFTER UPDATE
-ON ProjectViewModel
-BEGIN
-
-
- INSERT INTO ReportJournal(Id, Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-
- SELECT UserName        
-FROM ApplicationUser   
-INNER JOIN ProjectViewModel  
-on ApplicationUser.Id=ProjectViewModel.ProjectUserId;
-
-   VALUES (Id, UserName, False, Language, False, (
-  EndDate - StartDate),
-  0);
-   
-END;
-</sql><sql name="Edit Trigger journal_update">CREATE TRIGGER journal_update AFTER UPDATE
-ON ProjectViewModel
-BEGIN
-
-
- INSERT INTO ReportJournal(Id, Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-
- SELECT UserName        
-FROM ApplicationUser   
-INNER JOIN ProjectViewModel  
-on ApplicationUser.Id=ProjectViewModel.ProjectUserId;
-
-   VALUES (Id, UserName, False, Language, False, (
-  EndDate - StartDate),
-  0);
-   
-END</sql><sql name="Edit Trigger journal_update">CREATE TRIGGER journal_update AFTER UPDATE
-ON ProjectViewModel
-BEGIN
-
- INSERT INTO ReportJournal(Id, Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-
- SELECT Id from ProjectViewModel;
- 
- SELECT UserName        
-FROM ApplicationUser   
-INNER JOIN ProjectViewModel  
-on ApplicationUser.Id=ProjectViewModel.ProjectUserId;
-
-  SELECT (False, Language, False, (
-  EndDate - StartDate),
-  0) from ProjectViewModel;
-   
-END</sql><sql name="Edit Trigger journal_update">CREATE TRIGGER journal_update AFTER INSERT
-ON ProjectViewModel
-When Id is not NULL
-
-BEGIN
-
- INSERT INTO ReportJournal(Id, Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-
---  SELECT Id from ProjectViewModel;
---  
---  SELECT UserName        
--- FROM ApplicationUser   
--- INNER JOIN ProjectViewModel  
--- on ApplicationUser.Id=ProjectViewModel.ProjectUserId;
-
-  Values (New.Id, ApplicationUser.UserName, False, New.Language, False, 
-  (If (New.EndDate is not null),
-  New.EndDate - New.StartDate),
-  0);
-   
-END</sql><sql name="Edit Trigger journal_update">DROP TRIGGER &quot;main&quot;.&quot;journal_update&quot;;
-CREATE TRIGGER journal_update AFTER INSERT
-ON ProjectViewModel
-When New.Id is not NULL
-
-BEGIN
-
- INSERT INTO ReportJournal(Id)
-Values (New.Id);
-
- INSERT INTO ReportJournal(Author)
-SELECT UserName
-from AspNetUsers 
-INNER JOIN ProjectViewModel
-on AspNetUsers.Id=ProjectViewModel.ProjectUserId;
-
-INSERT INTO ReportJournal(NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-  Values (False, New.Language, False, 
-  (If (New.EndDate is not null),
-  New.EndDate - New.StartDate),
-  0);
-   
-END</sql><sql name="Edit Trigger journal_update">DROP TRIGGER &quot;main&quot;.&quot;journal_update&quot;;
-CREATE TRIGGER journal_update AFTER INSERT
-ON ProjectViewModel
-When New.Id is not NULL
-
-BEGIN
-
- INSERT INTO ReportJournal(Id)
-Values (New.Id);
-
- INSERT INTO ReportJournal(Author)
-SELECT UserName
-from AspNetUsers 
-INNER JOIN ProjectViewModel
-on AspNetUsers.Id=ProjectViewModel.ProjectUserId;
-
-INSERT INTO ReportJournal(NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-  Values (False, New.Language, False, 
-  (WHEN (New.EndDate is not null),
-  New.EndDate - New.StartDate),
-  0);
-   
-END</sql><sql name="Edit Trigger journal_update">
-
--- INSERT INTO new_ReportJournal SELECT * FROM ReportJournal;
-
--- DROP TABLE ReportJournal;
-
-ALTER TABLE new_ReportJournal RENAME TO ReportJournal;</sql><sql name="Edit Trigger journal_update">CREATE TRIGGER journal_update AFTER INSERT
-ON ProjectViewModel
-When New.Id is not NULL
-
-BEGIN
-
- INSERT INTO ReportJournal(Id)
-Values (New.Id);
-
- INSERT INTO ReportJournal(Author)
-SELECT UserName
-from AspNetUsers 
-INNER JOIN ProjectViewModel
-on AspNetUsers.Id=ProjectViewModel.ProjectUserId;
-
-INSERT INTO ReportJournal(NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-  Values (False, New.Language, False, 
-  (
-  SELECT(New.EndDate - New.StartDate)
-  WHERE New.EndDate is not null
---   SELECT (datetime(&quot;Now&quot;) - New.StartDate)
---   Where New.EndDate is NULL
-  ),
-  0);
-   
-END</sql><sql name="Edit Trigger journal_update">DROP TRIGGER &quot;main&quot;.&quot;journal_update&quot;;
-CREATE TRIGGER journal_update AFTER INSERT
-ON ProjectViewModel
-When New.Id is not NULL
-
-BEGIN
-
- INSERT INTO ReportJournal(Id)
-Values (New.Id);
-
- INSERT INTO ReportJournal(Author)
-SELECT UserName
-from AspNetUsers 
-INNER JOIN ProjectViewModel
-on AspNetUsers.Id=ProjectViewModel.ProjectUserId;
-
-INSERT INTO ReportJournal(NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-  Values (0, New.Language, 0, 
-  (
-  SELECT(New.EndDate - New.StartDate)
-  WHERE New.EndDate is not null
---   SELECT (datetime(&quot;Now&quot;) - New.StartDate)
---   Where New.EndDate is NULL
-  ),
-  0);
-   
-END</sql><sql name="Edit Trigger journal_update">CREATE TRIGGER journal_update AFTER INSERT
-ON ProjectViewModel
-When New.Id is not NULL
-
-BEGIN
-
-SELECT UserName
-from AspNetUsers 
-INNER JOIN ProjectViewModel
-on AspNetUsers.Id=ProjectViewModel.ProjectUserId;
-
- INSERT INTO ReportJournal(Id, Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
-Values (New.Id, UserName, 0, New.Language, 0, 
-  (
-  SELECT(New.EndDate - New.StartDate)
-  WHERE New.EndDate is not null
---   SELECT (datetime(&quot;Now&quot;) - New.StartDate)
---   Where New.EndDate is NULL
-  ),
-  0);
-   
-END</sql><sql name="Edit Trigger journal_update">DROP TRIGGER &quot;main&quot;.&quot;journal_update&quot;;
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/christiatidwell/Projects/ProjectApp/ProjectApp/(localdb)\mssqllocaldb" readonly="0" foreign_keys="0" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="0" synchronous="1"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="4399"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,15:mainApplicationUser"/><default_encoding codec=""/><browse_table_settings><table schema="" name="" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths/><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="ApplicationUser" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="18"/><column index="2" value="61"/><column index="3" value="120"/><column index="4" value="37"/><column index="5" value="96"/><column index="6" value="90"/><column index="7" value="84"/><column index="8" value="82"/><column index="9" value="105"/><column index="10" value="81"/><column index="11" value="134"/><column index="12" value="103"/><column index="13" value="68"/><column index="14" value="90"/><column index="15" value="105"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="Edit Trigger journal_update">DELETE from ReportJournal
+where Id = 2;</sql><sql name="Edit Trigger journal_update">DROP TRIGGER &quot;main&quot;.&quot;journal_update&quot;;
 CREATE TRIGGER journal_update AFTER INSERT
 ON ProjectViewModel
 When New.Id is not NULL
@@ -310,9 +10,9 @@ BEGIN
 Values (New.Id, 
 
 (SELECT UserName
-from AspNetUsers 
-INNER JOIN ProjectViewModel
-on AspNetUsers.Id=ProjectViewModel.ProjectUserId;),
+from AspNetUsers
+INNER JOIN ProjectViewModel 
+on AspNetUsers.Id=ProjectViewModel.ProjectUserId),
 
 0, 
 
@@ -321,8 +21,118 @@ New.Language,
 0, 
 
   (SELECT(New.EndDate - New.StartDate)
-  WHERE New.EndDate is not null),
+  WHERE New.EndDate is not null,
+  SELECT(0) WHERE New.EndDate is NULL
+  ),
   
   0);
    
-END</sql><current_tab id="25"/></tab_sql></sqlb_project>
+END</sql><sql name="Edit Trigger journal_update"></sql><sql name="Edit Trigger journal_update">CREATE TRIGGER journal_update AFTER INSERT
+ON ProjectViewModel
+When New.Id is not NULL
+
+BEGIN
+
+ INSERT INTO ReportJournal(Id, Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
+Values (New.Id, 
+
+(SELECT UserName
+from AspNetUsers
+INNER JOIN ProjectViewModel 
+on AspNetUsers.Id=ProjectViewModel.ProjectUserId),
+
+0, 
+
+New.Language, 
+
+0, 
+
+  (
+--   SELECT(New.EndDate - New.StartDate)
+--   WHERE New.EndDate is not null 
+  
+  SELECT *,
+       CASE WHEN New.EndDate IS NOT NULL
+       THEN (New.EndDate - New.StartDate)
+       ELSE (0)
+       END As DevTime 
+	   from ProjectViewModel
+	   ),
+	   
+  0);
+   
+END</sql><sql name="Edit Trigger journal_update">CREATE TRIGGER journal_update AFTER INSERT
+ON ProjectViewModel
+When New.Id is not NULL
+
+BEGIN
+
+ INSERT INTO ReportJournal(Id, Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
+Values (New.Id, 
+
+(SELECT UserName
+from AspNetUsers
+INNER JOIN ProjectViewModel 
+on AspNetUsers.Id=ProjectViewModel.ProjectUserId),
+
+0, 
+
+New.Language, 
+
+0, 
+
+--   (
+--   SELECT(New.EndDate - New.StartDate)
+--   WHERE New.EndDate is not null 
+  
+--   SELECT New.EndDate,
+--        CASE WHEN New.EndDate IS NOT NULL
+--        THEN (New.EndDate - New.StartDate)
+--        ELSE (0)
+--        END As DevTime 
+-- 	   from ProjectViewModel
+-- 	   ),
+	   
+	   CASE WHEN New.EndDate = null THEN (0) ELSE (New.EndDate - New.StartDate) END,
+	   
+	   
+	   
+  0);
+   
+END</sql><sql name="Edit Trigger journal_update">CREATE TRIGGER journal_update AFTER INSERT
+ON ProjectViewModel
+When New.Id is not NULL
+
+BEGIN
+
+ INSERT INTO ReportJournal(Id, Author, NameChange, ProjLanguage, LanguageChange, DevTime, ChangeCount) 
+Values (New.Id, 
+
+(SELECT UserName
+from AspNetUsers
+INNER JOIN ProjectViewModel 
+on AspNetUsers.Id=ProjectViewModel.ProjectUserId),
+
+0, 
+
+New.Language, 
+
+0, 
+
+  (
+  SELECT(New.EndDate - New.StartDate)),
+--   WHERE New.EndDate is not null),
+  
+--   SELECT New.EndDate,
+--        CASE WHEN New.EndDate IS NOT NULL
+--        THEN (New.EndDate - New.StartDate)
+--        ELSE (0)
+--        END As DevTime 
+-- 	   from ProjectViewModel
+-- 	   ),
+	   
+-- 	   CASE WHEN New.EndDate = null THEN (0) ELSE (New.EndDate - New.StartDate) END,
+	   
+  0);
+   
+END</sql><current_tab id="5"/></tab_sql></sqlb_project>
