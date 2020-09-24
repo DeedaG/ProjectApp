@@ -21,8 +21,6 @@ namespace ProjectApp.Controllers
         // GET: ReportJournal
         public async Task<IActionResult> Index()
         {
-            
-            //var projects = await _context.ReportJournal.Where(x => x.DevTime.Equals(0)).ToListAsync();
             var reports = await _context.ReportJournal.AsNoTracking().ToListAsync();
             var reports1 = new List<ProjectApp.Models.ReportJournal>();
             foreach (var item in reports)
